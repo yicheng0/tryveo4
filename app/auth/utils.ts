@@ -1,6 +1,5 @@
 // Allowed redirect domain name white list
 // 允许的重定向域名白名单
-// 許可されたリダイレクトドメイン名のホワイトリスト
 const ALLOWED_REDIRECT_HOSTS = (
   process.env.NODE_ENV === 'development'
     ? (process.env.ALLOWED_REDIRECT_HOSTS?.split(',') || [])

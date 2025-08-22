@@ -1,99 +1,121 @@
-import PricingCTA from "@/components/home/PricingCTA";
-import { cn } from "@/lib/utils";
-import { PricingPlan, PricingPlanTranslation } from "@/types/pricing";
-import { Check, X } from "lucide-react";
+"use client";
 
-const defaultBorderStyle = "border-gray-300 dark:border-gray-600";
-const highlightedBorderStyle =
-  "border-indigo-500 dark:border-indigo-500 hover:border-indigo-500 dark:hover:border-indigo-500";
-const highlightedBgStyle = "bg-indigo-500";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { PricingPlan, PricingPlanTranslation } from "@/types/pricing";
+import { Check } from "lucide-react";
+import { useState } from "react";
+import Link from "next/link";
 
 interface PricingCardDisplayProps {
-  id?: string;
   plan: PricingPlan;
   localizedPlan: PricingPlanTranslation;
+  id?: string;
+  className?: string;
 }
 
-export function PricingCardDisplay({
+export function PricingCardDisplay({ 
+  plan, 
+  localizedPlan, 
   id,
-  plan,
-  localizedPlan,
+  className = "" 
 }: PricingCardDisplayProps) {
-  const cardTitle =
-    localizedPlan?.card_title || plan.card_title || "Unnamed Plan";
-  const cardDescription =
-    localizedPlan?.card_description || plan.card_description || "";
-  const displayPrice = localizedPlan?.display_price || plan.display_price || "";
-  const originalPrice = localizedPlan?.original_price || plan.original_price;
-  const priceSuffix =
-    localizedPlan?.price_suffix?.replace(/^\/+/, "") ||
-    plan.price_suffix?.replace(/^\/+/, "");
-  const features = localizedPlan?.features || plan.features || [];
-  const highlightText = localizedPlan?.highlight_text;
+  const [isLoading, setIsLoading] = useState(false);
+
+  const formatPrice = (price: number | null) => {
+    if (!price) return '$0';
+    return new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'USD',
+      minimumFractionDigits: 0,
+    }).format(price / 100);
+  };
+
+  const getInterval = () => {
+    return plan.recurring_interval === 'month' ? '/month' : '/year';
+  };
+
+  const handleSubscribe = async () => {
+    setIsLoading(true);
+    // Handle subscription logic here
+    setTimeout(() => setIsLoading(false), 1000);
+  };
+
+  const displayPrice = localizedPlan.display_price || formatPrice(plan.price);
+  const displayTitle = localizedPlan.card_title || plan.card_title;
+  const displayDescription = localizedPlan.card_description || plan.card_description;
+  const buttonText = localizedPlan.button_text || plan.button_text || "Get Started";
 
   return (
-    <div
+    <Card 
       id={id}
-      className={`card rounded-xl p-8 shadow-sm border-t-4 ${
-        plan.is_highlighted ? highlightedBorderStyle : defaultBorderStyle
-      } ${
-        plan.is_highlighted ? "shadow-lg transform scale-105 relative z-10" : ""
-      }`}
+      className={`relative h-full ${plan.is_highlighted ? 'ring-2 ring-primary' : ''} ${className}`}
     >
-      {plan.is_highlighted && highlightText && (
-        <div
-          className={cn(
-            "absolute top-[-1px] right-0 text-white text-xs px-3 py-1 rounded-bl-lg rounded-tr-lg font-medium",
-            highlightedBgStyle
-          )}
-        >
-          {highlightText}
-        </div>
+      {plan.is_highlighted && (
+        <Badge className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-primary">
+          {plan.highlight_text || localizedPlan.highlight_text || "Most Popular"}
+        </Badge>
       )}
-      <h3 className="text-2xl font-semibold mb-2">{cardTitle}</h3>
-      {cardDescription && (
-        <p className="text-muted-foreground mb-6 h-[3rem]">{cardDescription}</p>
-      )}
-
-      <PricingCTA plan={plan} localizedPlan={localizedPlan} />
-
-      <div className="text-4xl mb-6">
-        {originalPrice ? (
-          <span className="text-sm line-through decoration-2 text-muted-foreground mr-1">
-            {originalPrice}
-          </span>
-        ) : null}
-
-        {displayPrice}
-
-        {priceSuffix ? (
-          <span className="text-sm text-muted-foreground">/{priceSuffix}</span>
-        ) : null}
-      </div>
-      <ul className="space-y-3 mb-6">
-        {features?.map(
-          (
-            feature: { description: string; included: boolean; bold?: boolean },
-            index: number
-          ) => (
-            <li key={index} className="flex items-start">
-              {feature.included ? (
-                <Check className="text-green-500 h-5 w-5 mt-1 mr-3 flex-shrink-0" />
-              ) : (
-                <X className="text-red-500 h-5 w-5 mt-1 mr-3 flex-shrink-0 opacity-50" />
-              )}
-              <span
-                className={cn(
-                  feature.included ? "" : "opacity-50",
-                  feature.bold ? "font-bold" : ""
-                )}
-              >
-                {feature.description}
-              </span>
-            </li>
-          )
+      
+      <CardHeader className="text-center">
+        <CardTitle className="text-xl font-bold text-foreground">
+          {displayTitle}
+        </CardTitle>
+        {displayDescription && (
+          <CardDescription className="text-muted-foreground">
+            {displayDescription}
+          </CardDescription>
         )}
-      </ul>
-    </div>
+        <div className="mt-4">
+          <span className="text-4xl font-bold text-foreground">
+            {displayPrice}
+          </span>
+          <span className="text-muted-foreground">
+            {localizedPlan.price_suffix || plan.price_suffix || getInterval()}
+          </span>
+        </div>
+      </CardHeader>
+
+      <CardContent className="flex-1 flex flex-col">
+        <div className="flex-1">
+          {(localizedPlan.features || plan.features) && (
+            <ul className="space-y-3 mb-6">
+              {(localizedPlan.features || plan.features || []).map((feature, index) => (
+                <li key={index} className="flex items-start">
+                  <Check className="h-5 w-5 text-primary mt-0.5 mr-3 flex-shrink-0" />
+                  <span 
+                    className={`text-sm text-foreground ${
+                      feature.bold ? 'font-semibold' : ''
+                    }`}
+                  >
+                    {feature.description}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          )}
+        </div>
+
+        <Button
+          onClick={handleSubscribe}
+          disabled={isLoading}
+          className={`w-full ${
+            plan.is_highlighted 
+              ? 'bg-primary hover:bg-primary/90' 
+              : 'bg-secondary hover:bg-secondary/90'
+          }`}
+          asChild={!isLoading}
+        >
+          {isLoading ? (
+            <span>Loading...</span>
+          ) : (
+            <Link href="/login">
+              {buttonText}
+            </Link>
+          )}
+        </Button>
+      </CardContent>
+    </Card>
   );
 }

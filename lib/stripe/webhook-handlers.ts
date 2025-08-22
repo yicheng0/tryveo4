@@ -39,7 +39,6 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
     /**
      * Idempotency Check
      * 幂等性检查
-     * 冪等性チェック
      */
     const { data: existingOrder, error: queryError } = await supabaseAdmin
       .from('orders')
@@ -102,9 +101,6 @@ export async function upgradeOneTimeCredits(userId: string, planId: string, paym
    * 我们建议在定价方案的 `benefits_jsonb` 字段中（可在仪表板的 /dashboard/prices 访问）定义权益。此代码会根据定义的权益，为用户完成权益升级。
    * 以下代码以 `one_time_credits` 为例。如果你需要升级其他权益，请根据你的具体业务逻辑修改以下代码。
    * 
-   * お客様のビジネスロジックに基づいて、ユーザーの特典アップグレードを完了させてください。
-   * 特典は、料金プランの `benefits_jsonb` フィールド（ダッシュボードの /dashboard/prices でアクセス可能）で定義することをお勧めします。このコードは、定義された特典に基づいて、ユーザーの特典をアップグレードします。
-   * 以下のコードは、`one_time_credits` を使用した例です。他の特典をアップグレードする必要がある場合は、お客様のビジネスロジックに従って、以下のコードを修正してください。
    */
   const { data: planData, error: planError } = await supabaseAdmin
     .from('pricing_plans')
@@ -166,7 +162,6 @@ export async function handleInvoicePaid(invoice: Stripe.Invoice) {
   /**
    * Idempotency Check
    * 幂等性检查
-   * 冪等性チェック
    */
   const { data: existingOrder, error: queryError } = await supabaseAdmin
     .from('orders')
@@ -297,9 +292,6 @@ export async function upgradeSubscriptionCredits(userId: string, planId: string,
    * 我们建议在定价方案的 `benefits_jsonb` 字段中（可在仪表板的 /dashboard/prices 访问）定义权益。此代码会根据定义的权益，为用户完成权益升级。
    * 以下代码以 `monthly_credits` 为例。如果你需要升级其他权益，请根据你的具体业务逻辑修改以下代码。
    * 
-   * お客様のビジネスロジックに基づいて、ユーザーの特典アップグレードを完了させてください。
-   * 特典は、料金プランの `benefits_jsonb` フィールド（ダッシュボードの /dashboard/prices でアクセス可能）で定義することをお勧めします。このコードは、定義された特典に基づいて、ユーザーの特典をアップグレードします。
-   * 以下のコードは、`monthly_credits` を使用した例です。他の特典をアップグレードする必要がある場合は、お客様のビジネスロジックに従って、以下のコードを修正してください。
    */
   try {
     const { data: planData, error: planError } = await supabaseAdmin
@@ -394,8 +386,6 @@ export async function revokeSubscriptionCredits(userId: string, planId: string, 
    * 根据你的业务逻辑，取消用户的订阅权益。
    * 此函数在订阅被取消时 ('customer.subscription.deleted') 触发。
    *
-   * お客様のビジネスロジックに基づいて、ユーザーのサブスクリプション特典を取消してください。
-   * この関数は、サブスクリプションがキャンセルされたとき ('customer.subscription.deleted') にトリガーされます。
    */
   try {
     const { data: planData, error: planError } = await supabaseAdmin
@@ -628,9 +618,6 @@ export async function revokeOneTimeCredits(charge: Stripe.Charge, originalOrder:
    * 我们建议在定价方案的 `benefits_jsonb` 字段中（可在仪表板的 /dashboard/prices 访问）定义权益。此代码会根据定义的权益，取消退款用户的付费权益。
    * 以下代码以 `one_time_credits` 为例。如果你需要取消其他权益，请根据你的具体业务逻辑修改以下代码。
    * 
-   * お客様のビジネスロジックに基づいて、ユーザーの特典を取消してください。
-   * 特典は、料金プランの `benefits_jsonb` フィールド（ダッシュボードの /dashboard/prices でアクセス可能）で定義することをお勧めします。このコードは、定義された特典に基づいて、ユーザーの特典を取消します。
-   * 以下のコードは、`one_time_credits` を使用した例です。他の特典を取消する必要がある場合は、お客様のビジネスロジックに従って、以下のコードを修正してください。
    */
   if (originalOrder && originalOrder.user_id && originalOrder.plan_id) {
     const isFullRefund = Math.abs(charge.amount_refunded) === Math.round(originalOrder.amount_total * 100);

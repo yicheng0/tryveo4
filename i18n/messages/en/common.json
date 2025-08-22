@@ -27,8 +27,8 @@
         "href": "/#pricing"
       },
       {
-        "name": "AI Demo",
-        "href": "/ai-demo"
+        "name": "veo4",
+        "href": "/veo4"
       },
       {
         "name": "Blogs",
@@ -116,11 +116,6 @@
             {
               "href": "/en",
               "name": "English",
-              "useA": true
-            },
-            {
-              "href": "/zh",
-              "name": "中文",
               "useA": true
             }
           ]
@@ -248,10 +243,10 @@
     "title": "Privacy Policy",
     "description": "Privacy Policy"
   },
-  "AIDemo": {
-    "title": "AI Capabilities Demo",
-    "description": "This page showcases non-public features and is exclusively for users who have purchased the template. It's designed for learning and testing the AI model invocation process. To use it, simply launch the template locally and input your API key in the environment variables. The AI demo includes functionalities like single-turn and multi-turn conversations, text-to-image, image-to-image, and text/image-to-video conversions. Through this demo, you can quickly grasp the AI invocation workflow, accelerating your journey in building AI applications.",
-    "metaDescription": "This page showcases AI capabilities including single-turn and multi-turn conversations, text-to-image, image-to-image, and text/image-to-video conversions."
+  "Veo4": {
+    "title": "Experience Veo 4 AI Video Generation — Free, Fast, and Feature-Rich",
+    "description": "Create stunning AI-generated videos with advanced Veo 4 technology. Experience next-generation video creation with enhanced quality, precision, and integrated audio generation. Start creating for free—instant access, no registration required.",
+    "metaDescription": "Try Veo 4 AI video generator for free. Create high-quality 1080p videos from text and images with advanced scene understanding and integrated audio generation."
   },
   "ErrorPage": {
     "403": {

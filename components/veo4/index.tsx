@@ -1,53 +1,17 @@
 "use client";
 
-import ImageToImageDemo from "@/components/ai-demo/ImageToImageDemo";
-import ImageToVideoDemo from "@/components/ai-demo/ImageToVideoDemo";
-import MultiTurnChatDemo from "@/components/ai-demo/MultiTurnChatDemo";
-import SingleTurnChatDemo from "@/components/ai-demo/SingleTurnChatDemo";
-import TextToImageDemo from "@/components/ai-demo/TextToImageDemo";
+import ImageToImageDemo from "@/components/veo4/ImageToImageDemo";
+import ImageToVideoDemo from "@/components/veo4/ImageToVideoDemo";
+import MultiTurnChatDemo from "@/components/veo4/MultiTurnChatDemo";
+import SingleTurnChatDemo from "@/components/veo4/SingleTurnChatDemo";
+import TextToImageDemo from "@/components/veo4/TextToImageDemo";
 import { cn } from "@/lib/utils";
 import {
-  Film,
-  ImageDown,
-  ImageIcon,
-  MessageSquare,
-  MessagesSquare,
+  Film
 } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 
 const navItems = [
-  {
-    id: "single-chat",
-    name: "Single-turn Chat",
-    icon: MessageSquare,
-    color: "text-indigo-500",
-    bgColor: "bg-indigo-50 dark:bg-indigo-950/30",
-    borderColor: "border-indigo-200 dark:border-indigo-800",
-  },
-  {
-    id: "multi-chat",
-    name: "Multi-turn Chat",
-    icon: MessagesSquare,
-    color: "text-blue-500",
-    bgColor: "bg-blue-50 dark:bg-blue-950/30",
-    borderColor: "border-blue-200 dark:border-blue-800",
-  },
-  {
-    id: "text-to-image",
-    name: "Text to Image",
-    icon: ImageIcon,
-    color: "text-emerald-500",
-    bgColor: "bg-emerald-50 dark:bg-emerald-950/30",
-    borderColor: "border-emerald-200 dark:border-emerald-800",
-  },
-  {
-    id: "image-to-image",
-    name: "Image to Image",
-    icon: ImageDown,
-    color: "text-purple-500",
-    bgColor: "bg-purple-50 dark:bg-purple-950/30",
-    borderColor: "border-purple-200 dark:border-purple-800",
-  },
   {
     id: "image-to-video",
     name: "Text/Image to Video",
@@ -58,7 +22,7 @@ const navItems = [
   },
 ];
 
-export default function AIDemo() {
+export default function Veo4Demo() {
   const [activeSection, setActiveSection] = useState(navItems[0].id);
   const sectionRefs = useRef<{ [key: string]: HTMLElement | null }>({});
 
@@ -179,9 +143,9 @@ function getDescriptionForSection(id: string): string {
     case "image-to-image":
       return "Transform images with artistic styles and effects";
     case "image-to-video":
-      return "Bring still images to life with realistic motion";
+      return "Transform static images into dynamic, high-quality 1080p videos with Veo 4's advanced scene understanding and integrated audio generation";
     case "text-to-video":
-      return "Create videos directly from text descriptions";
+      return "Create professional videos directly from text descriptions with Veo 4's cutting-edge AI technology";
     default:
       return "";
   }

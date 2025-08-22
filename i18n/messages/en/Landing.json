@@ -271,18 +271,6 @@
         "description": "Develop engaging educational content, training materials, and explainer videos. Transform complex concepts into easy-to-understand visual content that enhances learning and retention.",
         "image": "/placeholder.webp",
         "icon": "GraduationCap"
-      },
-      {
-        "title": "Entertainment & Storytelling",
-        "description": "Bring your creative stories to life with cinematic quality videos. Perfect for content creators, filmmakers, and storytellers who want to produce professional-grade content quickly and affordably.",
-        "image": "/placeholder.webp",
-        "icon": "Film"
-      },
-      {
-        "title": "Business & Corporate",
-        "description": "Create professional corporate videos, presentations, and internal communications. Streamline your business video production with consistent quality and brand alignment.",
-        "image": "/placeholder.webp",
-        "icon": "Building"
       }
     ]
   },
@@ -296,37 +284,37 @@
       {
         "name": "James Roberts",
         "role": "Filmmaker",
-        "content": "Veo 4 AI helped me turn simple prompts into stunning visuals. It's now part of every video I produce.",
+        "content": "Veo 4 generator helped me turn simple prompts into stunning cinematic visuals. It's revolutionized my entire filmmaking process.",
         "avatar": "/images/users/james.jpg"
       },
       {
         "name": "Olivia Turner",
         "role": "Social Media Creator",
-        "content": "I use Veo 4 AI to create short-form content for social media. It's fast, flexible, and the results look professional.",
+        "content": "I use Veo 4 generator to create viral short-form content for social media. The quality and speed are unmatched.",
         "avatar": "/images/users/olivia.jpg"
       },
       {
         "name": "Emily White",
         "role": "Digital Marketer",
-        "content": "With Try Veo 4 AI, I can test marketing ideas visually without hiring a team. It's saving time and budget.",
+        "content": "With Veo 4 generator, I can test marketing ideas visually without hiring expensive production teams. Game-changer for ROI.",
         "avatar": "/images/users/emily.jpg"
       },
       {
         "name": "Michael Brown",
         "role": "Small Business Owner",
-        "content": "As a startup founder, I need quick, high-quality content. Veo 4 makes it possible—even without design experience.",
+        "content": "As a startup founder, I need quick, high-quality content. Veo 4 generator delivers professional results without any video experience.",
         "avatar": "/images/users/michael.jpg"
       },
       {
         "name": "Dr. Laura Chen",
         "role": "Online Instructor",
-        "content": "I've started using Veo 4 AI to explain complex topics with motion visuals. It keeps my students more engaged.",
+        "content": "I've started using Veo 4 generator to explain complex topics with dynamic visuals. My student engagement has skyrocketed.",
         "avatar": "/images/users/laura.jpg"
       },
       {
-        "name": "Sarah Johnson",
+        "name": "Sarah Davis",
         "role": "Content Creator",
-        "content": "The quality of videos from Veo 4 is incredible. I can create cinematic content in minutes that would take hours before.",
+        "content": "Veo 4 generator has revolutionized my workflow. I can now create cinematic quality videos in minutes instead of hours.",
         "avatar": "/images/users/sarah.jpg"
       }
     ]
@@ -387,7 +375,6 @@
     "annual": "Annual",
     "monthly": "Monthly",
     "credits": "Credits",
-    "onetime": "One-Time",
     "saveTip": "Save 25%"
   }
 }

@@ -41,7 +41,7 @@ export default function Hero() {
                 </Link>
               </RainbowButton>
               <Button
-                className="h-11 rounded-xl px-8 py-2 bg-white text-indigo-500 hover:text-indigo-600 border-2 border-indigo-500"
+                className="h-11 rounded-xl px-8 py-2 bg-background text-primary hover:text-primary/80 border-2 border-primary/20 hover:border-primary/40"
                 variant="outline"
                 asChild
               >
@@ -58,16 +58,16 @@ export default function Hero() {
           {/* Right Video */}
            <div className="flex-1 flex justify-center items-center">
              <div className="relative w-full max-w-2xl">
-               <div className="relative rounded-lg overflow-hidden shadow-2xl bg-gradient-to-br from-purple-400 via-pink-500 to-red-500">
-                 <div className="aspect-video w-full flex items-center justify-center">
-                   <div className="text-white text-center p-8">
-                     <div className="w-16 h-16 mx-auto mb-4 bg-white/20 rounded-full flex items-center justify-center">
-                       <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
+               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 via-accent/20 to-primary/30 border border-primary/10">
+                 <div className="aspect-video w-full flex items-center justify-center backdrop-blur-sm">
+                   <div className="text-foreground text-center p-8">
+                     <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                       <svg className="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                        </svg>
                      </div>
-                     <h3 className="text-lg font-semibold mb-2">AI Video Generation</h3>
-                     <p className="text-sm opacity-90">Watch your ideas come to life</p>
+                     <h3 className="text-lg font-semibold mb-2 text-foreground">AI Video Generation</h3>
+                     <p className="text-sm text-muted-foreground">Watch your ideas come to life</p>
                    </div>
                  </div>
                </div>
