@@ -85,11 +85,7 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
 
 export default function Veo4FeatureShowcase() {
   return (
-    <section className="relative py-20 bg-gradient-to-b from-gray-900 via-purple-900/20 to-gray-900">
-      {/* Background Effects */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_40%,rgba(139,92,246,0.1),transparent_50%)] pointer-events-none" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(168,85,247,0.08),transparent_40%)] pointer-events-none" />
-      
+    <section className="relative py-20 bg-transparent text-white">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">

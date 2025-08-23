@@ -175,12 +175,7 @@ export function Veo4Generator() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#0f0f0f] text-white relative overflow-hidden">
-      {/* 背景层 - 线性渐变 + 径向渐变光圈 */}
-      <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f0f] via-[#121212] to-[#1a0f1a] pointer-events-none z-0"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.08)_0%,transparent_50%)] pointer-events-none z-0"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.06)_0%,transparent_40%)] pointer-events-none z-0"></div>
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(147,51,234,0.06)_0%,transparent_40%)] pointer-events-none z-0"></div>
+    <div className="min-h-screen w-full bg-transparent text-white relative overflow-hidden">
 
       {/* 主内容区域 */}
       <div className="relative z-10 w-full min-w-[100vw] min-h-screen flex overflow-x-hidden">

@@ -1,11 +1,8 @@
-import { Veo4Generator } from "@/components/veo4/Veo4Generator";
-import { Button } from "@/components/ui/button";
+import Veo4PageContent from "@/components/veo4/Veo4Page";
 import { Locale } from "@/i18n/routing";
 import { constructMetadata } from "@/lib/metadata";
 import { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
-import { Info } from "lucide-react";
-import Link from "next/link";
 
 type Params = Promise<{ locale: string }>;
 
@@ -33,6 +30,6 @@ export async function generateMetadata({
 
 export default function Veo4Page() {
   return (
-    <Veo4Generator />
+    <Veo4PageContent />
   );
 }
