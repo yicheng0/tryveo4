@@ -162,16 +162,16 @@ export default function ImageToVideoDemo() {
   };
 
   return (
-    <div className="p-6">
-      <div className="mb-4">
-        <h2 className="text-xl font-bold mb-2">Image to Video</h2>
-        <p className="text-muted-foreground text-sm mb-6">
+    <div className="w-full">
+      <div className="mb-6">
+        <h2 className="text-lg sm:text-xl font-bold mb-2">Image to Video</h2>
+        <p className="text-muted-foreground text-sm mb-4">
           Animate still images into smooth, realistic videos with AI.
         </p>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        <div className="space-y-4">
+      <div className="flex flex-col xl:flex-row gap-6 w-full">
+        <div className="xl:w-1/3 w-full space-y-4">
           <div>
             <label
               htmlFor="model-select"
@@ -252,7 +252,7 @@ export default function ImageToVideoDemo() {
               Upload Source Image
             </label>
             {sourceImage ? (
-              <div className="relative border rounded-md overflow-hidden h-48">
+              <div className="relative border rounded-md overflow-hidden h-40 sm:h-48">
                 <Button
                   size="icon"
                   variant="destructive"
@@ -269,7 +269,7 @@ export default function ImageToVideoDemo() {
                 />
               </div>
             ) : (
-              <label className="border-2 border-dashed rounded-md p-8 h-48 flex flex-col items-center justify-center cursor-pointer hover:border-primary/50 transition-colors">
+              <label className="border-2 border-dashed rounded-md p-6 sm:p-8 h-40 sm:h-48 flex flex-col items-center justify-center cursor-pointer hover:border-primary/50 transition-colors">
                 <FileUp className="h-10 w-10 text-muted-foreground mb-4" />
                 <span className="text-muted-foreground text-sm text-center">
                   Upload an image to animate
@@ -303,10 +303,10 @@ export default function ImageToVideoDemo() {
           </Button>
         </div>
 
-        <div className="lg:col-span-2">
+        <div className="xl:w-2/3 w-full">
           <Label className="text-sm font-medium mb-2 block">Result Video</Label>
-          <Card className="h-[calc(100%-28px)]">
-            <CardContent className="p-4 h-full flex flex-col items-center justify-center">
+          <Card className="min-h-[400px] sm:min-h-[500px] w-full">
+            <CardContent className="p-4 h-full min-h-[350px] sm:min-h-[450px] flex flex-col items-center justify-center">
               {loading ? (
                 <div className="flex flex-col items-center justify-center text-center">
                   <Loader2 className="h-8 w-8 animate-spin text-primary mb-2" />
@@ -322,7 +322,7 @@ export default function ImageToVideoDemo() {
                 </div>
               ) : resultVideo ? (
                 <div className="w-full h-full flex flex-col">
-                  <div className="flex-1 relative border rounded-md overflow-hidden bg-black">
+                  <div className="relative border rounded-md overflow-hidden bg-black min-h-[300px] sm:min-h-[400px] flex-1">
                     <video
                       src={resultVideo}
                       controls

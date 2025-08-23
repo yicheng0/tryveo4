@@ -18,8 +18,8 @@
   "Header": {
     "links": [
       {
-        "name": "Features",
-        "href": "/#features"
+        "name": "Home",
+        "href": "/"
       },
       {
         "id": "pricing",

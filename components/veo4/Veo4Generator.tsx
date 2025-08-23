@@ -1,7 +1,6 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import {
   Select,
@@ -176,153 +175,147 @@ export function Veo4Generator() {
   };
 
   return (
-    <div className="relative w-full overflow-hidden">
-      <div className="flex flex-col xl:flex-row gap-4 lg:gap-6 w-full">
-        {/* Left Panel - Controls */}
-        <div className="xl:w-2/5 w-full space-y-6">
-          <Card className="p-4 lg:p-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg">
-            {/* Mode Toggle */}
-            <div className="mb-6">
-              <div className="flex gap-1 p-1 bg-gray-100 dark:bg-gray-800 rounded-lg">
-                <button
-                  onClick={() => setMode("text-to-video")}
-                  className={cn(
-                    "flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
-                    mode === "text-to-video"
-                      ? "bg-blue-600 text-white shadow-sm"
-                      : "text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
-                  )}
-                >
-                  Text-to-Video
-                </button>
-                <button
-                  onClick={() => setMode("image-to-video")}
-                  className={cn(
-                    "flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
-                    mode === "image-to-video"
-                      ? "bg-blue-600 text-white shadow-sm"
-                      : "text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700"
-                  )}
-                >
-                  Image-to-Video
-                </button>
-              </div>
-            </div>
+    <div className="min-h-screen w-full bg-[#0f0f0f] text-white relative overflow-hidden">
+      {/* 背景层 - 线性渐变 + 径向渐变光圈 */}
+      <div className="absolute inset-0 bg-gradient-to-br from-[#0f0f0f] via-[#121212] to-[#1a0f1a] pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(139,92,246,0.08)_0%,transparent_50%)] pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,rgba(168,85,247,0.06)_0%,transparent_40%)] pointer-events-none z-0"></div>
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_80%,rgba(147,51,234,0.06)_0%,transparent_40%)] pointer-events-none z-0"></div>
 
-            {/* Image Upload - Only for Image-to-Video mode */}
-            {mode === "image-to-video" && (
-              <div className="mb-6">
-                <Label className="text-sm font-medium mb-3 block">
-                  Upload Image
-                </Label>
-                {sourceImage ? (
-                  <div className="relative border rounded-lg overflow-hidden h-40 bg-gray-50 dark:bg-gray-800">
-                    <Button
-                      size="icon"
-                      variant="destructive"
-                      className="absolute top-2 right-2 z-10 h-8 w-8"
-                      onClick={removeImage}
-                    >
-                      <X className="h-4 w-4" />
-                    </Button>
-                    <Image
-                      src={sourceImage}
-                      alt="Source image"
-                      fill
-                      className="object-contain"
-                    />
-                  </div>
-                ) : (
-                  <label className="border-2 border-dashed border-gray-300 dark:border-gray-600 rounded-lg p-6 h-40 flex flex-col items-center justify-center cursor-pointer hover:border-blue-500 transition-colors bg-gray-50/50 dark:bg-gray-800/50">
-                    <FileUp className="h-8 w-8 text-gray-400 mb-2" />
-                    <span className="text-sm text-gray-500 text-center">
-                      Click to upload an image
-                    </span>
-                    <input
-                      type="file"
-                      className="hidden"
-                      accept="image/png,image/jpeg,image/webp"
-                      onChange={handleImageUpload}
-                      disabled={loading}
-                    />
-                  </label>
+      {/* 主内容区域 */}
+      <div className="relative z-10 w-full min-w-[100vw] min-h-screen flex overflow-x-hidden">
+        {/* 左侧：控制栏 */}
+        <div className="w-[400px] p-6 flex flex-col gap-4 bg-black/20 backdrop-blur-sm border-r border-white/10">
+          
+          {/* Tabs */}
+          <div className="flex w-full">
+            <button
+              onClick={() => setMode("text-to-video")}
+              className={cn(
+                "flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
+                mode === "text-to-video"
+                  ? "bg-purple-600 text-white shadow-sm"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+              )}
+            >
+              Text-to-Video
+            </button>
+            <button
+              onClick={() => setMode("image-to-video")}
+              className={cn(
+                "flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
+                mode === "image-to-video"
+                  ? "bg-purple-600 text-white shadow-sm"
+                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+              )}
+            >
+              Image-to-Video
+            </button>
+          </div>
+
+          {/* Image Upload - Only for Image-to-Video mode */}
+          {mode === "image-to-video" && (
+            <div>
+              {sourceImage ? (
+                <div className="relative border border-white/20 rounded-md overflow-hidden h-32 bg-black/30 group">
+                  <Button
+                    size="icon"
+                    className="absolute top-2 right-2 z-10 h-6 w-6 bg-red-500 hover:bg-red-600 text-white rounded-full"
+                    onClick={removeImage}
+                  >
+                    <X className="h-3 w-3" />
+                  </Button>
+                  <Image
+                    src={sourceImage}
+                    alt="Source image"
+                    fill
+                    className="object-contain"
+                  />
+                </div>
+              ) : (
+                <label className="border-2 border-dashed border-white/20 rounded-md p-4 h-32 flex flex-col items-center justify-center cursor-pointer hover:border-purple-500 transition-colors bg-black/20">
+                  <FileUp className="h-6 w-6 text-gray-400 mb-2" />
+                  <span className="text-sm text-gray-300 text-center">
+                    Click to upload image
+                  </span>
+                  <input
+                    type="file"
+                    className="hidden"
+                    accept="image/png,image/jpeg,image/webp"
+                    onChange={handleImageUpload}
+                    disabled={loading}
+                  />
+                </label>
+              )}
+            </div>
+          )}
+
+          {/* Prompt */}
+          <div>
+            <Textarea
+              placeholder={
+                mode === "text-to-video"
+                  ? "Be detailed and specific about what you want to see in your video..."
+                  : "Describe how the image should animate..."
+              }
+              className="h-40 w-full rounded-md border border-white/20 bg-black/30 p-2 text-sm font-medium text-white placeholder:text-gray-400 outline-none focus:ring-1 focus:ring-purple-500"
+              value={prompt}
+              onChange={(e) => setPrompt(e.target.value)}
+              onKeyDown={handleKeyDown}
+              disabled={loading}
+            />
+          </div>
+
+          {/* Model Selection */}
+          <div>
+            <Select
+              value={selectedModel}
+              onValueChange={setSelectedModel}
+              disabled={IMAGE_TO_VIDEO_MODELS.length === 0 || loading}
+            >
+              <SelectTrigger className="h-10 w-full rounded-md border border-white/20 bg-black/30 p-2 text-sm font-medium text-white outline-none focus:ring-1 focus:ring-purple-500">
+                <SelectValue placeholder="Select a model">
+                  {getModelDisplayName(selectedModel)}
+                </SelectValue>
+              </SelectTrigger>
+              <SelectContent className="bg-gray-900 border-white/20">
+                {IMAGE_TO_VIDEO_MODELS.length === 0 && (
+                  <SelectItem value="no-models" disabled className="text-gray-400">
+                    No models available
+                  </SelectItem>
                 )}
-              </div>
-            )}
+                {IMAGE_TO_VIDEO_MODELS.map((model) => (
+                  <SelectItem
+                    key={`${model.provider}/${model.id}`}
+                    value={`${model.provider}/${model.id}`}
+                    className="text-white hover:bg-gray-700"
+                  >
+                    {model.name} ({model.provider})
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
 
-            {/* Prompt Input */}
-            <div className="mb-6">
-              <Label className="text-sm font-medium mb-3 block">
-                Prompt
-              </Label>
-              <Textarea
-                placeholder={
-                  mode === "text-to-video"
-                    ? "Be detailed and specific about what you want to see in your video..."
-                    : "Describe how the image should animate..."
-                }
-                className="min-h-24 resize-none bg-white dark:bg-gray-800 border-gray-200 dark:border-gray-700"
-                value={prompt}
-                onChange={(e) => setPrompt(e.target.value)}
-                onKeyDown={handleKeyDown}
-                disabled={loading}
-              />
-            </div>
+          {/* Duration Selection */}
+          <div>
+            <Select
+              value={duration}
+              onValueChange={setDuration}
+              disabled={loading}
+            >
+              <SelectTrigger className="h-10 w-full rounded-md border border-white/20 bg-black/30 p-2 text-sm font-medium text-white outline-none focus:ring-1 focus:ring-purple-500">
+                <SelectValue placeholder="Select duration" />
+              </SelectTrigger>
+              <SelectContent className="bg-gray-900 border-white/20">
+                <SelectItem value="5" className="text-white hover:bg-gray-700">5 seconds</SelectItem>
+                <SelectItem value="10" className="text-white hover:bg-gray-700">10 seconds</SelectItem>
+              </SelectContent>
+            </Select>
+          </div>
 
-            {/* Model Selection */}
-            <div className="mb-6">
-              <Label className="text-sm font-medium mb-3 block">
-                Model
-              </Label>
-              <Select
-                value={selectedModel}
-                onValueChange={setSelectedModel}
-                disabled={IMAGE_TO_VIDEO_MODELS.length === 0 || loading}
-              >
-                <SelectTrigger className="bg-white dark:bg-gray-800">
-                  <SelectValue placeholder="Select a model">
-                    {getModelDisplayName(selectedModel)}
-                  </SelectValue>
-                </SelectTrigger>
-                <SelectContent>
-                  {IMAGE_TO_VIDEO_MODELS.length === 0 && (
-                    <SelectItem value="no-models" disabled>
-                      No models available
-                    </SelectItem>
-                  )}
-                  {IMAGE_TO_VIDEO_MODELS.map((model) => (
-                    <SelectItem
-                      key={`${model.provider}/${model.id}`}
-                      value={`${model.provider}/${model.id}`}
-                    >
-                      {model.name} ({model.provider})
-                    </SelectItem>
-                  ))}
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Duration Selection */}
-            <div className="mb-6">
-              <Label className="text-sm font-medium mb-3 block">
-                Duration
-              </Label>
-              <Select
-                value={duration}
-                onValueChange={setDuration}
-                disabled={loading}
-              >
-                <SelectTrigger className="bg-white dark:bg-gray-800">
-                  <SelectValue placeholder="Select duration" />
-                </SelectTrigger>
-                <SelectContent>
-                  <SelectItem value="5">5 seconds</SelectItem>
-                  <SelectItem value="10">10 seconds</SelectItem>
-                </SelectContent>
-              </Select>
-            </div>
-
-            {/* Generate Button */}
+          {/* Generate Button */}
+          <div>
             <Button
               onClick={handleGenerate}
               disabled={
@@ -331,90 +324,95 @@ export function Veo4Generator() {
                 !selectedModel ||
                 (mode === "image-to-video" && !sourceImage)
               }
-              className="w-full h-12 bg-blue-600 hover:bg-blue-700 text-white font-medium"
+              className="w-full h-12 bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
-                  <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                  Generating Video...
+                  <Loader2 className="mr-2 h-4 w-4 animate-spin" />
+                  Generating...
                 </>
               ) : (
                 <>
-                  <Play className="mr-2 h-5 w-5" />
+                  <Play className="mr-2 h-4 w-4" />
                   Generate Video
                 </>
               )}
             </Button>
-          </Card>
+          </div>
+
         </div>
 
-        {/* Right Panel - Preview */}
-        <div className="xl:w-3/5 w-full">
-          <Card className="p-4 lg:p-6 bg-white/90 dark:bg-gray-900/90 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-lg h-full">
-            <div className="flex flex-col h-full min-h-[500px] lg:min-h-[600px]">
-              <h3 className="text-lg font-semibold mb-4 text-gray-900 dark:text-gray-100">
-                Video Preview
-              </h3>
-              
-              <div className="flex-1 flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
-                {loading ? (
-                  <div className="flex flex-col items-center justify-center text-center p-8">
-                    <Loader2 className="h-12 w-12 animate-spin text-blue-600 mb-4" />
-                    <p className="text-gray-600 dark:text-gray-400">
-                      Generating your video...
-                    </p>
-                    <p className="text-sm text-gray-500 mt-1">
-                      This may take a few minutes
-                    </p>
+        {/* 右侧：预览区域 */}
+        <div className="flex-1 p-10 flex flex-col items-center justify-center bg-black/10 backdrop-blur-sm">
+          <div className="w-full max-w-4xl">
+            <h3 className="text-lg font-semibold mb-6 text-white">
+              Video Preview
+            </h3>
+            
+            <div className="flex items-center justify-center bg-black/30 backdrop-blur-sm rounded-lg border border-white/10 min-h-[600px]">
+              {loading ? (
+                <div className="flex flex-col items-center justify-center text-center p-8">
+                  <Loader2 className="h-12 w-12 animate-spin text-purple-500 mb-4" />
+                  <p className="text-white font-medium">
+                    Generating your video...
+                  </p>
+                  <p className="text-gray-400 text-sm mt-1">
+                    This may take a few minutes
+                  </p>
+                </div>
+              ) : error ? (
+                <div className="flex flex-col items-center justify-center text-center p-8">
+                  <X className="h-12 w-12 text-red-500 mb-4" />
+                  <p className="text-red-500 font-medium">Generation Failed</p>
+                  <p className="text-gray-400 text-sm mt-1 max-w-xs">{error}</p>
+                  <Button 
+                    onClick={handleGenerate}
+                    className="mt-4 bg-red-600 hover:bg-red-700 text-white"
+                  >
+                    Try Again
+                  </Button>
+                </div>
+              ) : resultVideo ? (
+                <div className="w-full">
+                  <div className="relative rounded-lg overflow-hidden bg-black mb-6">
+                    <video
+                      src={resultVideo}
+                      controls
+                      className="w-full h-auto max-h-[500px] object-contain"
+                      autoPlay
+                      muted
+                      loop
+                    >
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
-                ) : error ? (
-                  <div className="flex flex-col items-center justify-center text-center text-red-600 p-8">
-                    <X className="h-12 w-12 mb-4" />
-                    <p className="font-medium">Generation Failed</p>
-                    <p className="text-sm mt-1 max-w-xs">{error}</p>
-                  </div>
-                ) : resultVideo ? (
-                  <div className="w-full h-full flex flex-col">
-                    <div className="flex-1 relative rounded-lg overflow-hidden bg-black">
-                      <video
-                        src={resultVideo}
-                        controls
-                        className="w-full h-full object-contain"
-                        autoPlay
-                        muted
-                        loop
-                      >
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                    <div className="mt-4 flex justify-end">
-                      <Button
-                        variant="outline"
-                        onClick={() =>
-                          downloadFileFromUrl(resultVideo, "veo4-generated-video.mp4")
-                        }
-                        disabled={!resultVideo}
-                      >
-                        <Download className="h-4 w-4 mr-2" />
-                        Download
-                      </Button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="text-center text-gray-500 dark:text-gray-400 p-8">
-                    <Play className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                    <p className="text-lg font-medium mb-2">Ready to Generate</p>
-                    <p className="text-sm">
-                      {mode === "text-to-video" 
-                        ? "Enter a detailed prompt and click generate"
-                        : "Upload an image, add a prompt, and click generate"
+                  <div className="flex justify-center">
+                    <Button
+                      onClick={() =>
+                        downloadFileFromUrl(resultVideo, "veo4-generated-video.mp4")
                       }
-                    </p>
+                      disabled={!resultVideo}
+                      className="bg-green-600 hover:bg-green-700 text-white"
+                    >
+                      <Download className="h-4 w-4 mr-2" />
+                      Download Video
+                    </Button>
                   </div>
-                )}
-              </div>
+                </div>
+              ) : (
+                <div className="text-center text-gray-400 p-8">
+                  <Play className="h-16 w-16 mx-auto mb-4 opacity-50" />
+                  <p className="text-white font-medium mb-2 text-lg">Ready to Generate</p>
+                  <p className="text-sm">
+                    {mode === "text-to-video" 
+                      ? "Enter a detailed prompt and click generate"
+                      : "Upload an image, add a prompt, and click generate"
+                    }
+                  </p>
+                </div>
+              )}
             </div>
-          </Card>
+          </div>
         </div>
       </div>
     </div>

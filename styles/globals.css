@@ -22,6 +22,14 @@ html {
   :root {
     --background: oklch(1.0000 0 0);
     --foreground: oklch(0.2686 0 0);
+    
+    /* Veo4 App Theme Variables */
+    --akr-color-background: #ffffff;
+    --akr-color-background-gray: #f8fafc;
+    --akr-color-primary: #6366f1;
+    --akr-color-text-primary: #1e293b;
+    --akr-color-text-placeholder: #94a3b8;
+    --akr-color-rgb: 99, 102, 241;
     --card: oklch(1.0000 0 0);
     --card-foreground: oklch(0.2686 0 0);
     --popover: oklch(1.0000 0 0);
@@ -71,6 +79,14 @@ html {
   .dark {
     --background: oklch(0.2046 0 0);
     --foreground: oklch(0.9219 0 0);
+    
+    /* Veo4 App Dark Theme Variables */
+    --akr-color-background: #0f172a;
+    --akr-color-background-gray: #1e293b;
+    --akr-color-primary: #8b5cf6;
+    --akr-color-text-primary: #f1f5f9;
+    --akr-color-text-placeholder: #64748b;
+    --akr-color-rgb: 139, 92, 246;
     --card: oklch(0.2686 0 0);
     --card-foreground: oklch(0.9219 0 0);
     --popover: oklch(0.2686 0 0);

@@ -3,7 +3,10 @@
     "allow": [
       "WebFetch(domain:tryveo3.ai)",
       "Bash(mv:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git push:*)",
+      "Bash(GIT_TERMINAL_PROMPT=0 git push origin main)",
+      "Bash(git branch:*)"
     ],
     "deny": []
   }

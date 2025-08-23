@@ -60,28 +60,34 @@ export default function Veo4Demo() {
   };
 
   return (
-    <div className="relative flex flex-col items-center">
-      <div className="w-fit sticky top-20 z-30 backdrop-blur-xl bg-background/80 shadow-md rounded-full mb-16 mx-4">
-        <div className="flex flex-nowrap overflow-x-auto gap-1 sm:gap-2 py-2 px-2 hide-scrollbar">
+    <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+      {/* Animated Background Elements */}
+      <div className="fixed inset-0 overflow-hidden pointer-events-none">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+      </div>
+      
+      <div className="w-fit sticky top-20 z-30 backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-2xl mb-12 mx-4">
+        <div className="flex flex-nowrap overflow-x-auto gap-2 py-3 px-4 hide-scrollbar">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => scrollToSection(item.id)}
               className={cn(
-                "flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-full transition-all duration-300 whitespace-nowrap flex-shrink-0",
+                "flex items-center gap-3 px-4 py-3 text-sm font-semibold rounded-xl transition-all duration-300 whitespace-nowrap flex-shrink-0 transform hover:scale-105",
                 activeSection === item.id
-                  ? `${item.bgColor} ${item.color} shadow-sm`
-                  : "hover:bg-muted text-muted-foreground hover:text-foreground"
+                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25"
+                  : "text-white/70 hover:bg-white/10 hover:text-white"
               )}
             >
-              <item.icon className="h-4 w-4" />
+              <item.icon className="h-5 w-5" />
               <span className="hidden sm:inline">{item.name}</span>
             </button>
           ))}
         </div>
       </div>
 
-      <div className="space-y-24 w-full">
+      <div className="w-full px-4 sm:px-6 lg:px-8 space-y-16 relative z-10">
         {navItems.map((item) => (
           <section
             key={item.id}
@@ -90,27 +96,19 @@ export default function Veo4Demo() {
               sectionRefs.current[item.id] = el;
               return undefined;
             }}
-            className={cn(
-              "rounded-xl overflow-hidden border shadow-lg",
-              item.borderColor
-            )}
+            className="rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-full backdrop-blur-xl bg-white/5 hover:bg-white/10 transition-all duration-500 transform hover:scale-[1.02]"
           >
-            <div className={cn("p-6", item.bgColor)}>
-              <div className="max-w-4xl mx-auto">
-                <div className="flex items-center gap-4">
-                  <div
-                    className={cn(
-                      "p-3 rounded-full bg-white/90 dark:bg-black/30 shadow-md",
-                      item.color
-                    )}
-                  >
-                    <item.icon className="h-7 w-7" />
+            <div className="p-6 sm:p-8 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20">
+              <div className="w-full">
+                <div className="flex items-center gap-6">
+                  <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
+                    <item.icon className="h-8 w-8 text-white" />
                   </div>
                   <div>
-                    <h2 className="text-2xl md:text-3xl font-bold">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
                       {item.name}
                     </h2>
-                    <p className="text-muted-foreground">
+                    <p className="text-base sm:text-lg text-white/80 leading-relaxed">
                       {getDescriptionForSection(item.id)}
                     </p>
                   </div>
@@ -118,8 +116,8 @@ export default function Veo4Demo() {
               </div>
             </div>
 
-            <div className="bg-card p-6">
-              <div className="max-w-4xl mx-auto">
+            <div className="bg-black/20 backdrop-blur-sm p-6 sm:p-8">
+              <div className="w-full">
                 <DemoComponent id={item.id} />
               </div>
             </div>
