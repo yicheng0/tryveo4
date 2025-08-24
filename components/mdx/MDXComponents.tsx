@@ -27,19 +27,19 @@ interface MDXComponentsProps {
 
 const MDXComponents: MDXComponentsProps = {
   h1: (props) => (
-    <Heading level={1} className="text-4xl font-bold mt-8 mb-6" {...props} />
+    <Heading level={1} className="text-4xl font-bold font-serif mt-8 mb-6" {...props} />
   ),
   h2: (props) => (
     <Heading
       level={2}
-      className="text-3xl font-semibold mt-8 mb-6 border-b-2 border-gray-200 pb-2"
+      className="text-3xl font-semibold font-serif mt-8 mb-6 border-b-2 border-gray-200 pb-2"
       {...props}
     />
   ),
   h3: (props) => (
     <Heading
       level={3}
-      className="text-2xl font-semibold mt-6 mb-4"
+      className="text-2xl font-semibold font-serif mt-6 mb-4"
       {...props}
     />
   ),

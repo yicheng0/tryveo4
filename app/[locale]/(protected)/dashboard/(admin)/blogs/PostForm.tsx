@@ -205,8 +205,8 @@ export function PostForm({
         name: t.name,
       })) || [],
     is_pinned: initialData?.is_pinned ?? false,
-    status: initialData?.status || "draft",
-    visibility: initialData?.visibility || "public",
+    status: (initialData?.status || "draft") as "draft" | "published" | "archived",
+    visibility: (initialData?.visibility || "public") as "public" | "logged_in" | "subscribers",
   };
 
   const form = useForm<PostFormValues>({

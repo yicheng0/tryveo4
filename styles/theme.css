@@ -4,12 +4,12 @@
 
 @layer components {
   :root {
-    --main: 258 69% 42%;  /* #5b21b6 */
+    --main: 214 95% 67%;  /* Blue for dark bg */
     --main-foreground: 0 0% 100%;  /* #ffffff */
-    --main-hover: #4c1d95;
+    --main-hover: #2563eb;
 
-    --main-gradient-from: #6366f1;
-    --main-gradient-to: #8b5cf6;
+    --main-gradient-from: #2979FF;
+    --main-gradient-to: #1e40af;
 
     --color-1: 0 100% 63%;
 
@@ -23,12 +23,12 @@
   }
 
   .dark {
-    --main: 267 56% 58%;  /* #7c3aed */
+    --main: 214 95% 67%;  /* Blue for coffee bg */
     --main-foreground: 0 0% 100%;  /* #ffffff */
-    --main-hover: #6d28d9;
+    --main-hover: #2563eb;
 
-    --main-gradient-from: #7c3aed;
-    --main-gradient-to: #a855f7;
+    --main-gradient-from: #2979FF;
+    --main-gradient-to: #1e40af;
   }
 }
 @layer components {
@@ -58,20 +58,18 @@
   }
 
   .highlight-button {
-    @apply text-white dark:text-white px-8 py-3 rounded-lg font-medium text-center shadow-lg transition-all duration-200;
+    @apply text-white px-8 py-3 rounded-lg font-medium text-center shadow-lg transition-all duration-200;
     background: linear-gradient(
       to right,
       var(--main-gradient-from),
       var(--main-gradient-to)
     );
+    box-shadow: 0 4px 15px rgba(41,121,255,0.3), inset 0 1px 0 rgba(255,255,255,0.2);
   }
 
   .highlight-button:hover {
-    box-shadow: 0 10px 25px -5px rgba(79, 70, 229, 0.4);
-  }
-
-  .dark .highlight-button:hover {
-    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
+    box-shadow: 0 8px 25px rgba(41,121,255,0.4), 0 4px 15px rgba(37,99,235,0.3), inset 0 1px 0 rgba(255,255,255,0.25);
+    transform: translateY(-1px);
   }
 
   .card {
@@ -96,6 +94,41 @@
 
   .theme {
     --animate-rainbow: rainbow var(--speed, 2s) infinite linear;
+  }
+
+  /* Removed grid backgrounds for clean unified background */
+
+  /* Simplified glass effects for unified background */
+  .glass-card {
+    background: rgba(33,26,20,0.95);
+    border: 1px solid rgba(245,158,11,0.1);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+  }
+
+  /* Raphael.app style specific overrides */
+  body {
+    background: #211a14 !important;
+    color: #f4f1ec;
+  }
+  
+  /* Enhanced text readability on coffee background */
+  .text-enhanced-light {
+    color: #fef9f3;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+  }
+  
+  .text-enhanced-muted {
+    color: #d4c4b0;
+  }
+  
+  /* Coffee-toned accents */
+  .accent-warm {
+    color: #f59e0b;
+  }
+  
+  .accent-warm-bg {
+    background: rgba(245,158,11,0.1);
+    border: 1px solid rgba(245,158,11,0.2);
   }
 }
 

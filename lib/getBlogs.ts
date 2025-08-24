@@ -77,10 +77,10 @@ function mapServerPostToBlogPost(serverPost: PublicPostWithContent, locale: stri
     tags: serverPost.tags ?? "",
     published_at:
       (serverPost.published_at && dayjs(serverPost.published_at).toDate()) || new Date(serverPost.created_at),
-    status: serverPost.status ?? "published",
+    status: (serverPost.status ?? "published") as "draft" | "published" | "archived",
     is_pinned: serverPost.is_pinned ?? false,
     content: serverPost.content ?? '',
-    visibility: serverPost.visibility,
+    visibility: serverPost.visibility as "public" | "logged_in" | "subscribers" | undefined,
   };
 }
 

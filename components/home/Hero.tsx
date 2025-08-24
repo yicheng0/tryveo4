@@ -22,7 +22,7 @@ export default function Hero() {
               href={t("badge.href")}
             />
             <div className="flex gap-4 flex-col max-w-2xl">
-               <h1 className="text-3xl font-bold text-foreground md:text-5xl leading-tight">
+               <h1 className="text-3xl font-bold font-serif text-foreground md:text-5xl leading-tight">
                  {t("title")}
                </h1>
 
@@ -58,15 +58,15 @@ export default function Hero() {
           {/* Right Video */}
            <div className="flex-1 flex justify-center items-center">
              <div className="relative w-full max-w-2xl">
-               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-gradient-to-br from-primary/20 via-accent/20 to-primary/30 border border-primary/10">
-                 <div className="aspect-video w-full flex items-center justify-center backdrop-blur-sm">
+               <div className="relative rounded-2xl overflow-hidden shadow-2xl bg-card border border-primary/10">
+                 <div className="aspect-video w-full flex items-center justify-center bg-background">
                    <div className="text-foreground text-center p-8">
-                     <div className="w-16 h-16 mx-auto mb-4 bg-primary/20 rounded-full flex items-center justify-center">
+                     <div className="w-16 h-16 mx-auto mb-4 bg-card rounded-full flex items-center justify-center">
                        <svg className="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 20 20">
                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clipRule="evenodd" />
                        </svg>
                      </div>
-                     <h3 className="text-lg font-semibold mb-2 text-foreground">AI Video Generation</h3>
+                     <h3 className="text-lg font-semibold font-serif mb-2 text-foreground">AI Video Generation</h3>
                      <p className="text-sm text-muted-foreground">Watch your ideas come to life</p>
                    </div>
                  </div>
@@ -78,7 +78,7 @@ export default function Hero() {
         {/* Features Grid Section */}
         <div className="mt-16 lg:mt-24">
           <div className="text-center mb-12">
-            <h2 className="text-2xl font-semibold text-foreground md:text-4xl mb-4">
+            <h2 className="text-2xl font-semibold font-serif text-foreground md:text-4xl mb-4">
               Veo 4 AI Video Generator Features
             </h2>
           </div>
@@ -86,12 +86,12 @@ export default function Hero() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto max-w-7xl">
             {/* First Row - Feature Cards 1-4 */}
             {/* Feature Card 1 */}
-            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
+            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
               <div className="flex flex-col h-full">
                 <div className="mb-4">
                   <Video className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold font-serif text-foreground mb-2">
                   Advanced Scene Understanding
                 </h3>
                 <p className="text-sm text-muted-foreground flex-1">
@@ -101,12 +101,12 @@ export default function Hero() {
             </div>
 
             {/* Feature Card 2 */}
-            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
+            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
               <div className="flex flex-col h-full">
                 <div className="mb-4">
                   <Wand2 className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold font-serif text-foreground mb-2">
                   Multi-Modal Creative Input
                 </h3>
                 <p className="text-sm text-muted-foreground flex-1">
@@ -116,12 +116,12 @@ export default function Hero() {
             </div>
 
             {/* Feature Card 3 */}
-            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
+            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
               <div className="flex flex-col h-full">
                 <div className="mb-4">
                   <Sparkles className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold font-serif text-foreground mb-2">
                   Cinematic Quality Rendering
                 </h3>
                 <p className="text-sm text-muted-foreground flex-1">
@@ -131,12 +131,12 @@ export default function Hero() {
             </div>
 
             {/* Feature Card 4 */}
-            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
+            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
               <div className="flex flex-col h-full">
                 <div className="mb-4">
                   <Zap className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold font-serif text-foreground mb-2">
                   Intelligent Motion Dynamics
                 </h3>
                 <p className="text-sm text-muted-foreground flex-1">
@@ -147,12 +147,12 @@ export default function Hero() {
 
             {/* Second Row - Feature Cards 5-8 */}
             {/* Feature Card 5 */}
-            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
+            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
               <div className="flex flex-col h-full">
                 <div className="mb-4">
                   <Clock className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold font-serif text-foreground mb-2">
                   Lightning-Fast Generation
                 </h3>
                 <p className="text-sm text-muted-foreground flex-1">
@@ -162,12 +162,12 @@ export default function Hero() {
             </div>
 
             {/* Feature Card 6 */}
-            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
+            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
               <div className="flex flex-col h-full">
                 <div className="mb-4">
                   <Shield className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold font-serif text-foreground mb-2">
                   Enterprise-Grade Security
                 </h3>
                 <p className="text-sm text-muted-foreground flex-1">
@@ -177,12 +177,12 @@ export default function Hero() {
             </div>
 
             {/* Feature Card 7 */}
-            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
+            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
               <div className="flex flex-col h-full">
                 <div className="mb-4">
                   <Palette className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold font-serif text-foreground mb-2">
                   Customizable Style Engine
                 </h3>
                 <p className="text-sm text-muted-foreground flex-1">
@@ -192,12 +192,12 @@ export default function Hero() {
             </div>
 
             {/* Feature Card 8 */}
-            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-primary/5 p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
+            <div className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-background p-6 shadow-sm transition duration-500 hover:border-primary/20 hover:shadow-md">
               <div className="flex flex-col h-full">
                 <div className="mb-4">
                   <Globe className="w-8 h-8 text-primary" />
                 </div>
-                <h3 className="text-lg font-semibold text-foreground mb-2">
+                <h3 className="text-lg font-semibold font-serif text-foreground mb-2">
                   Global Content Adaptation
                 </h3>
                 <p className="text-sm text-muted-foreground flex-1">

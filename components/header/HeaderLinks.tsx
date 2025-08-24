@@ -17,29 +17,49 @@ const HeaderLinks = () => {
   }
 
   return (
-    <div className="hidden lg:flex flex-row items-center gap-x-2 text-sm text-muted-foreground">
-      {headerLinks.map((link) => (
-        <I18nLink
-          key={link.name}
-          href={link.href}
-          title={link.name}
-          prefetch={link.target && link.target === "_blank" ? false : true}
-          target={link.target || "_self"}
-          rel={link.rel || undefined}
-          className={cn(
-            "rounded-xl px-4 py-2 flex items-center gap-x-1 hover:bg-accent-foreground/10 hover:text-accent-foreground",
-            pathname === link.href && "font-medium text-accent-foreground"
-          )}
-        >
-          {link.name}
-          {link.target && link.target === "_blank" && (
-            <span className="text-xs">
-              <ExternalLink className="w-4 h-4" />
-            </span>
-          )}
-        </I18nLink>
-      ))}
-    </div>
+    <nav className="hidden lg:flex items-center space-x-2">
+      {headerLinks.map((link) => {
+        const isCurrentPage = pathname === link.href || 
+          (link.href === '/' && pathname === '/') ||
+          (link.href === '/#pricing' && pathname === '/') ||
+          (link.href === '/veo4' && pathname === '/veo4') ||
+          (link.href === '/blogs' && pathname.startsWith('/blogs'));
+        
+        return (
+          <I18nLink
+            key={link.name}
+            href={link.href}
+            title={link.name}
+            prefetch={link.target && link.target === "_blank" ? false : true}
+            target={link.target || "_self"}
+            rel={link.rel || undefined}
+            className={cn(
+              "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
+              isCurrentPage
+                ? "bg-white/5 text-[#FACC15]"
+                : "text-white/80 hover:text-white hover:scale-105"
+            )}
+            onMouseEnter={(e) => {
+              if (!isCurrentPage) {
+                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)';
+              }
+            }}
+            onMouseLeave={(e) => {
+              if (!isCurrentPage) {
+                e.currentTarget.style.backgroundColor = 'transparent';
+              }
+            }}
+          >
+            {link.name}
+            {link.target && link.target === "_blank" && (
+              <span className="text-xs ml-1">
+                <ExternalLink className="w-4 h-4" />
+              </span>
+            )}
+          </I18nLink>
+        );
+      })}
+    </nav>
   );
 };
 

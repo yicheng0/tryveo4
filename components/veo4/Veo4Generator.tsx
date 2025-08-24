@@ -175,12 +175,12 @@ export function Veo4Generator() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-transparent text-white relative overflow-hidden">
+    <div className="min-h-screen w-full bg-transparent text-foreground relative overflow-hidden">
 
       {/* 主内容区域 */}
       <div className="relative z-10 w-full min-w-[100vw] min-h-screen flex overflow-x-hidden">
         {/* 左侧：控制栏 */}
-        <div className="w-[400px] p-6 flex flex-col gap-4 bg-black/20 backdrop-blur-sm border-r border-white/10">
+        <div className="w-[400px] p-6 flex flex-col gap-4 glass-bg border-r">
           
           {/* Tabs */}
           <div className="flex w-full">
@@ -189,8 +189,8 @@ export function Veo4Generator() {
               className={cn(
                 "flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
                 mode === "text-to-video"
-                  ? "bg-purple-600 text-white shadow-sm"
-                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+                  ? "bg-[#2979FF] text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}
             >
               Text-to-Video
@@ -200,8 +200,8 @@ export function Veo4Generator() {
               className={cn(
                 "flex-1 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-200",
                 mode === "image-to-video"
-                  ? "bg-purple-600 text-white shadow-sm"
-                  : "text-gray-300 hover:bg-white/10 hover:text-white"
+                  ? "bg-[#2979FF] text-white shadow-sm"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}
             >
               Image-to-Video
@@ -212,7 +212,7 @@ export function Veo4Generator() {
           {mode === "image-to-video" && (
             <div>
               {sourceImage ? (
-                <div className="relative border border-white/20 rounded-md overflow-hidden h-32 bg-black/30 group">
+                <div className="relative border border-border rounded-md overflow-hidden h-32 bg-card group">
                   <Button
                     size="icon"
                     className="absolute top-2 right-2 z-10 h-6 w-6 bg-red-500 hover:bg-red-600 text-white rounded-full"
@@ -228,9 +228,9 @@ export function Veo4Generator() {
                   />
                 </div>
               ) : (
-                <label className="border-2 border-dashed border-white/20 rounded-md p-4 h-32 flex flex-col items-center justify-center cursor-pointer hover:border-purple-500 transition-colors bg-black/20">
-                  <FileUp className="h-6 w-6 text-gray-400 mb-2" />
-                  <span className="text-sm text-gray-300 text-center">
+                <label className="border-2 border-dashed border-border rounded-md p-4 h-32 flex flex-col items-center justify-center cursor-pointer hover:border-primary transition-colors bg-card">
+                  <FileUp className="h-6 w-6 text-muted-foreground mb-2" />
+                  <span className="text-sm text-muted-foreground text-center">
                     Click to upload image
                   </span>
                   <input
@@ -253,7 +253,7 @@ export function Veo4Generator() {
                   ? "Be detailed and specific about what you want to see in your video..."
                   : "Describe how the image should animate..."
               }
-              className="h-40 w-full rounded-md border border-white/20 bg-black/30 p-2 text-sm font-medium text-white placeholder:text-gray-400 outline-none focus:ring-1 focus:ring-purple-500"
+              className="h-40 w-full rounded-md border border-border bg-card p-2 text-sm font-medium text-foreground placeholder:text-muted-foreground outline-none focus:ring-1 focus:ring-primary"
               value={prompt}
               onChange={(e) => setPrompt(e.target.value)}
               onKeyDown={handleKeyDown}
@@ -268,14 +268,14 @@ export function Veo4Generator() {
               onValueChange={setSelectedModel}
               disabled={IMAGE_TO_VIDEO_MODELS.length === 0 || loading}
             >
-              <SelectTrigger className="h-10 w-full rounded-md border border-white/20 bg-black/30 p-2 text-sm font-medium text-white outline-none focus:ring-1 focus:ring-purple-500">
+              <SelectTrigger className="h-10 w-full rounded-md border border-border bg-card p-2 text-sm font-medium text-foreground outline-none focus:ring-1 focus:ring-primary">
                 <SelectValue placeholder="Select a model">
                   {getModelDisplayName(selectedModel)}
                 </SelectValue>
               </SelectTrigger>
-              <SelectContent className="bg-gray-900 border-white/20">
+              <SelectContent className="bg-card border-border">
                 {IMAGE_TO_VIDEO_MODELS.length === 0 && (
-                  <SelectItem value="no-models" disabled className="text-gray-400">
+                  <SelectItem value="no-models" disabled className="text-muted-foreground">
                     No models available
                   </SelectItem>
                 )}
@@ -283,7 +283,7 @@ export function Veo4Generator() {
                   <SelectItem
                     key={`${model.provider}/${model.id}`}
                     value={`${model.provider}/${model.id}`}
-                    className="text-white hover:bg-gray-700"
+                    className="text-foreground hover:bg-muted"
                   >
                     {model.name} ({model.provider})
                   </SelectItem>
@@ -299,12 +299,12 @@ export function Veo4Generator() {
               onValueChange={setDuration}
               disabled={loading}
             >
-              <SelectTrigger className="h-10 w-full rounded-md border border-white/20 bg-black/30 p-2 text-sm font-medium text-white outline-none focus:ring-1 focus:ring-purple-500">
+              <SelectTrigger className="h-10 w-full rounded-md border border-border bg-card p-2 text-sm font-medium text-foreground outline-none focus:ring-1 focus:ring-primary">
                 <SelectValue placeholder="Select duration" />
               </SelectTrigger>
-              <SelectContent className="bg-gray-900 border-white/20">
-                <SelectItem value="5" className="text-white hover:bg-gray-700">5 seconds</SelectItem>
-                <SelectItem value="10" className="text-white hover:bg-gray-700">10 seconds</SelectItem>
+              <SelectContent className="bg-card border-border">
+                <SelectItem value="5" className="text-foreground hover:bg-muted">5 seconds</SelectItem>
+                <SelectItem value="10" className="text-foreground hover:bg-muted">10 seconds</SelectItem>
               </SelectContent>
             </Select>
           </div>
@@ -319,7 +319,7 @@ export function Veo4Generator() {
                 !selectedModel ||
                 (mode === "image-to-video" && !sourceImage)
               }
-              className="w-full h-12 bg-purple-600 hover:bg-purple-700 text-white font-medium text-sm rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full h-12 bg-[#2979FF] hover:bg-blue-600 text-white font-medium text-sm rounded-md transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? (
                 <>
@@ -338,38 +338,38 @@ export function Veo4Generator() {
         </div>
 
         {/* 右侧：预览区域 */}
-        <div className="flex-1 p-10 flex flex-col items-center justify-center bg-black/10 backdrop-blur-sm">
+        <div className="flex-1 p-10 flex flex-col items-center justify-center glass-bg/50">
           <div className="w-full max-w-4xl">
-            <h3 className="text-lg font-semibold mb-6 text-white">
+            <h3 className="text-lg font-semibold mb-6 text-foreground">
               Video Preview
             </h3>
             
-            <div className="flex items-center justify-center bg-black/30 backdrop-blur-sm rounded-lg border border-white/10 min-h-[600px]">
+            <div className="flex items-center justify-center glass-card rounded-lg min-h-[600px]">
               {loading ? (
                 <div className="flex flex-col items-center justify-center text-center p-8">
-                  <Loader2 className="h-12 w-12 animate-spin text-purple-500 mb-4" />
-                  <p className="text-white font-medium">
+                  <Loader2 className="h-12 w-12 animate-spin text-primary mb-4" />
+                  <p className="text-foreground font-medium">
                     Generating your video...
                   </p>
-                  <p className="text-gray-400 text-sm mt-1">
+                  <p className="text-muted-foreground text-sm mt-1">
                     This may take a few minutes
                   </p>
                 </div>
               ) : error ? (
                 <div className="flex flex-col items-center justify-center text-center p-8">
-                  <X className="h-12 w-12 text-red-500 mb-4" />
-                  <p className="text-red-500 font-medium">Generation Failed</p>
-                  <p className="text-gray-400 text-sm mt-1 max-w-xs">{error}</p>
+                  <X className="h-12 w-12 text-destructive mb-4" />
+                  <p className="text-destructive font-medium">Generation Failed</p>
+                  <p className="text-muted-foreground text-sm mt-1 max-w-xs">{error}</p>
                   <Button 
                     onClick={handleGenerate}
-                    className="mt-4 bg-red-600 hover:bg-red-700 text-white"
+                    className="mt-4 bg-destructive hover:bg-destructive/90 text-destructive-foreground"
                   >
                     Try Again
                   </Button>
                 </div>
               ) : resultVideo ? (
                 <div className="w-full">
-                  <div className="relative rounded-lg overflow-hidden bg-black mb-6">
+                  <div className="relative rounded-lg overflow-hidden bg-card mb-6">
                     <video
                       src={resultVideo}
                       controls
@@ -395,9 +395,9 @@ export function Veo4Generator() {
                   </div>
                 </div>
               ) : (
-                <div className="text-center text-gray-400 p-8">
+                <div className="text-center text-muted-foreground p-8">
                   <Play className="h-16 w-16 mx-auto mb-4 opacity-50" />
-                  <p className="text-white font-medium mb-2 text-lg">Ready to Generate</p>
+                  <p className="text-foreground font-medium mb-2 text-lg">Ready to Generate</p>
                   <p className="text-sm">
                     {mode === "text-to-video" 
                       ? "Enter a detailed prompt and click generate"

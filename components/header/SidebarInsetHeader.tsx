@@ -10,8 +10,8 @@ import { SidebarTrigger } from "@/components/ui/sidebar";
 
 export default function SidebarInsetHeader() {
   return (
-    <header className="w-full py-2 px-4 backdrop-blur-md sticky top-0 z-50">
-      <nav className="flex justify-between items-center w-full mx-auto">
+    <header className="w-full py-4 px-4 bg-background/80 backdrop-blur-md text-foreground">
+      <nav className="max-w-7xl mx-auto flex justify-between items-center w-full">
         <div className="flex items-center gap-2">
           <SidebarTrigger />
           <Separator orientation="vertical" className="h-4" />

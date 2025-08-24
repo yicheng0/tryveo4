@@ -6,7 +6,15 @@
       "Bash(git add:*)",
       "Bash(git push:*)",
       "Bash(GIT_TERMINAL_PROMPT=0 git push origin main)",
-      "Bash(git branch:*)"
+      "Bash(git branch:*)",
+      "Bash(rm:*)",
+      "Bash(npm run build:*)",
+      "Bash(grep:*)",
+      "Bash(find:*)",
+      "Bash(sed:*)",
+      "WebFetch(domain:raphael.app)",
+      "Bash(git checkout:*)",
+      "Bash(rg:*)"
     ],
     "deny": []
   }

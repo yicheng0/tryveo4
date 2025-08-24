@@ -42,7 +42,7 @@ export function PricingCardDisplay({
     setTimeout(() => setIsLoading(false), 1000);
   };
 
-  const displayPrice = localizedPlan.display_price || formatPrice(plan.price);
+  const displayPrice = localizedPlan.display_price || formatPrice(plan.price || 0);
   const displayTitle = localizedPlan.card_title || plan.card_title;
   const displayDescription = localizedPlan.card_description || plan.card_description;
   const buttonText = localizedPlan.button_text || plan.button_text || "Get Started";
@@ -59,7 +59,7 @@ export function PricingCardDisplay({
       )}
       
       <CardHeader className="text-center">
-        <CardTitle className="text-xl font-bold text-foreground">
+        <CardTitle className="text-xl font-bold font-serif text-foreground">
           {displayTitle}
         </CardTitle>
         {displayDescription && (

@@ -19,11 +19,15 @@ const config = {
   		}
   	},
   	extend: {
+  		fontFamily: {
+  			serif: ['Playfair Display', 'serif'],
+  			sans: ['Inter', 'sans-serif'],
+  		},
   		colors: {
   			border: 'var(--border)',
   			input: 'var(--input)',
   			ring: 'var(--ring)',
-  			background: 'var(--background)',
+  			background: '#211a14',
   			foreground: 'var(--foreground)',
   			main: {
   				DEFAULT: 'hsl(var(--main))',

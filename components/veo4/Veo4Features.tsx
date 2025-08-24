@@ -35,8 +35,8 @@ const features = [
     title: "Image-to-Video Animation",
     description: "Transform static images into dynamic, engaging videos. Upload any image and watch as Veo 4 brings it to life with realistic motion and smooth transitions.",
     icon: ImageIcon,
-    color: "text-purple-500",
-    bgColor: "bg-purple-50 dark:bg-purple-950/30",
+    color: "text-blue-500",
+    bgColor: "bg-blue-50 dark:bg-blue-950/30",
     actionText: "Try Animation"
   },
   {
@@ -59,8 +59,8 @@ const features = [
     title: "Creative Control",
     description: "Fine-tune every aspect of your video with advanced prompting and style controls. Achieve your exact creative vision.",
     icon: Palette,
-    color: "text-pink-500",
-    bgColor: "bg-pink-50 dark:bg-pink-950/30",
+    color: "text-blue-500",
+    bgColor: "bg-blue-50 dark:bg-blue-950/30",
     actionText: "Customize"
   }
 ];
@@ -135,17 +135,17 @@ export default function Veo4Features() {
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 dark:from-blue-950/20 dark:via-purple-950/20 dark:to-pink-950/20">
+      <section className="relative overflow-hidden bg-background">
         <div className="absolute inset-0 bg-grid-pattern opacity-5" />
         <div className="relative max-w-7xl mx-auto px-4 py-16 sm:py-24">
           <div className="text-center">
-            <Badge className="mb-4 bg-blue-100 text-blue-700 dark:bg-blue-950 dark:text-blue-300">
+            <Badge className="mb-4 bg-primary/10 text-primary">
               <Sparkles className="h-3 w-3 mr-1" />
               Powered by Veo 4
             </Badge>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
               Explore the Power of{" "}
-              <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="highlight-text">
                 Veo 4 AI
               </span>
             </h1>
@@ -155,7 +155,7 @@ export default function Veo4Features() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/veo4">
-                <Button size="lg" className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white">
+                <Button size="lg" className="highlight-button">
                   <Play className="h-5 w-5 mr-2" />
                   Start Creating Now
                 </Button>
@@ -183,7 +183,7 @@ export default function Veo4Features() {
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="group hover:shadow-xl transition-all duration-300 border-0 bg-gradient-to-br from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50">
+              <Card key={index} className="group glass-card hover:shadow-xl transition-all duration-300 border-0">
                 <CardContent className="p-8">
                   <div className={`inline-flex p-3 rounded-2xl ${feature.bgColor} mb-6`}>
                     <feature.icon className={`h-8 w-8 ${feature.color}`} />
@@ -219,11 +219,11 @@ export default function Veo4Features() {
             {steps.map((step, index) => (
               <div key={index} className="text-center">
                 <div className="relative mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto">
+                  <div className="w-16 h-16 highlight-bg rounded-full flex items-center justify-center text-white font-bold text-xl mx-auto">
                     {step.number}
                   </div>
                   {index < steps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gradient-to-r from-blue-600 to-purple-600 opacity-30" />
+                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-primary/30" />
                   )}
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{step.title}</h3>
@@ -244,17 +244,17 @@ export default function Veo4Features() {
               Perfect for Every Creator
             </h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-              Whether you're a content creator, marketer, educator, or filmmaker, 
+              Whether you&apos;re a content creator, marketer, educator, or filmmaker, 
               Veo 4 adapts to your unique needs.
             </p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {useCases.map((useCase, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-all duration-300">
+              <Card key={index} className="text-center glass-card hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
-                  <div className="inline-flex p-4 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-950/30 dark:to-purple-950/30 rounded-2xl mb-6">
-                    <useCase.icon className="h-8 w-8 text-blue-600 dark:text-blue-400" />
+                  <div className="inline-flex p-4 bg-primary/5 dark:bg-primary/10 rounded-2xl mb-6">
+                    <useCase.icon className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="text-xl font-bold mb-4">{useCase.title}</h3>
                   <p className="text-muted-foreground mb-6">
@@ -263,7 +263,7 @@ export default function Veo4Features() {
                   <ul className="space-y-2">
                     {useCase.benefits.map((benefit, benefitIndex) => (
                       <li key={benefitIndex} className="flex items-center text-sm text-muted-foreground">
-                        <CheckCircle className="h-4 w-4 text-green-500 mr-2 flex-shrink-0" />
+                        <CheckCircle className="h-4 w-4 text-primary mr-2 flex-shrink-0" />
                         {benefit}
                       </li>
                     ))}
@@ -289,7 +289,7 @@ export default function Veo4Features() {
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={index} className="hover:shadow-lg transition-all duration-300">
+              <Card key={index} className="glass-card hover:shadow-lg transition-all duration-300">
                 <CardContent className="p-8">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
@@ -297,7 +297,7 @@ export default function Veo4Features() {
                     ))}
                   </div>
                   <blockquote className="text-lg mb-6 italic">
-                    "{testimonial.content}"
+                    &ldquo;{testimonial.content}&rdquo;
                   </blockquote>
                   <div>
                     <div className="font-semibold">{testimonial.name}</div>
@@ -311,7 +311,7 @@ export default function Veo4Features() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 sm:py-24 bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600">
+      <section className="py-16 sm:py-24 highlight-bg">
         <div className="max-w-4xl mx-auto px-4 text-center">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-6">
             Ready to Create Amazing Videos?
@@ -321,7 +321,7 @@ export default function Veo4Features() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/veo4">
-              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-primary hover:bg-gray-100">
                 <Play className="h-5 w-5 mr-2" />
                 Get Started Free
               </Button>

@@ -22,8 +22,8 @@ function mapServerPostToBlogCard(post: PublicPost, locale: string): BlogPost {
     tags: post.tags ?? "",
     published_at:
       (post.published_at && dayjs(post.published_at).toDate()) || new Date(),
-    status: post.status ?? "published",
-    visibility: post.visibility ?? "public",
+    status: (post.status ?? "published") as "draft" | "published" | "archived",
+    visibility: (post.visibility ?? "public") as "public" | "logged_in" | "subscribers",
     is_pinned: post.is_pinned ?? false,
     content: "", // content is not used in the blog card
   };

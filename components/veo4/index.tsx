@@ -60,11 +60,11 @@ export default function Veo4Demo() {
   };
 
   return (
-    <div className="relative flex flex-col items-center min-h-screen bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="relative flex flex-col items-center min-h-screen bg-background">
       {/* Animated Background Elements */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-20 left-20 w-72 h-72 bg-gradient-to-r from-purple-500/10 to-pink-500/10 rounded-full blur-3xl animate-pulse" />
-        <div className="absolute bottom-20 right-20 w-72 h-72 bg-gradient-to-r from-blue-500/10 to-purple-500/10 rounded-full blur-3xl animate-pulse animation-delay-2000" />
+        <div className="absolute top-20 left-20 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-pulse" />
+        <div className="absolute bottom-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-pulse animation-delay-2000" />
       </div>
       
       <div className="w-fit sticky top-20 z-30 backdrop-blur-xl bg-white/10 border border-white/20 shadow-2xl rounded-2xl mb-12 mx-4">
@@ -76,8 +76,8 @@ export default function Veo4Demo() {
               className={cn(
                 "flex items-center gap-3 px-4 py-3 text-sm font-semibold rounded-xl transition-all duration-300 whitespace-nowrap flex-shrink-0 transform hover:scale-105",
                 activeSection === item.id
-                  ? "bg-gradient-to-r from-purple-500 to-pink-500 text-white shadow-lg shadow-purple-500/25"
-                  : "text-white/70 hover:bg-white/10 hover:text-white"
+                  ? "highlight-bg text-white shadow-lg"
+                  : "text-muted-foreground hover:bg-muted hover:text-foreground"
               )}
             >
               <item.icon className="h-5 w-5" />
@@ -98,17 +98,17 @@ export default function Veo4Demo() {
             }}
             className="rounded-3xl overflow-hidden border border-white/20 shadow-2xl w-full backdrop-blur-xl bg-white/5 hover:bg-white/10 transition-all duration-500 transform hover:scale-[1.02]"
           >
-            <div className="p-6 sm:p-8 bg-gradient-to-r from-purple-500/20 via-pink-500/20 to-orange-500/20">
+            <div className="p-6 sm:p-8 bg-primary/5">
               <div className="w-full">
                 <div className="flex items-center gap-6">
                   <div className="p-4 rounded-2xl bg-white/10 backdrop-blur-sm border border-white/20 shadow-lg">
-                    <item.icon className="h-8 w-8 text-white" />
+                    <item.icon className="h-8 w-8 text-primary" />
                   </div>
                   <div>
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-foreground mb-2">
                       {item.name}
                     </h2>
-                    <p className="text-base sm:text-lg text-white/80 leading-relaxed">
+                    <p className="text-base sm:text-lg text-muted-foreground leading-relaxed">
                       {getDescriptionForSection(item.id)}
                     </p>
                   </div>

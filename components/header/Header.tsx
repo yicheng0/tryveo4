@@ -12,36 +12,38 @@ const Header = () => {
   const t = useTranslations("Home");
 
   return (
-    <header className="py-2 px-6 backdrop-blur-md sticky top-0 z-50">
-      <nav className="flex justify-between items-center w-full mx-auto">
-        <div className="flex items-center space-x-6 md:space-x-12">
-          <I18nLink
-            href="/"
-            title={t("title")}
-            prefetch={true}
-            className="flex items-center space-x-1"
-          >
-            <Image src="/logo.png" alt="Logo" width={32} height={32} />
-            <span className={cn("text-md font-medium")}>{t("title")}</span>
-          </I18nLink>
+    <header className="w-full px-6 py-4 text-white bg-background flex items-center justify-between">
+      {/* 左侧区域：Logo + Nav */}
+      <div className="flex items-center space-x-8">
+        {/* Logo */}
+        <I18nLink
+          href="/"
+          title={t("title")}
+          prefetch={true}
+          className="flex items-center space-x-2"
+        >
+          <Image src="/logo.png" alt="Logo" width={24} height={24} className="w-6 h-6" />
+          <span className="text-xl font-semibold">{t("title")}</span>
+        </I18nLink>
 
-          <HeaderLinks />
+        {/* 导航 */}
+        <HeaderLinks />
+      </div>
+
+      {/* 右侧按钮区域 */}
+      <div className="flex items-center space-x-2">
+        {/* PC */}
+        <div className="hidden lg:flex items-center space-x-2">
+          <LocaleSwitcher />
+          <ThemeToggle />
+          <UserAvatar />
         </div>
 
-        <div className="flex items-center gap-x-2 flex-1 justify-end">
-          {/* PC */}
-          <div className="hidden lg:flex items-center gap-x-2">
-            <LocaleSwitcher />
-            <ThemeToggle />
-            <UserAvatar />
-          </div>
-
-          {/* Mobile */}
-          <div className="flex lg:hidden">
-            <MobileMenu />
-          </div>
+        {/* Mobile */}
+        <div className="flex lg:hidden">
+          <MobileMenu />
         </div>
-      </nav>
+      </div>
     </header>
   );
 };

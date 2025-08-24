@@ -22,12 +22,18 @@ import {
   setRequestLocale,
 } from "next-intl/server";
 import { ThemeProvider } from "next-themes";
-import { Inter as FontSans } from "next/font/google";
+import { Inter as FontSans, Playfair_Display as FontSerif } from "next/font/google";
 import { notFound } from "next/navigation";
 
-export const fontSans = FontSans({
+const fontSans = FontSans({
   subsets: ["latin"],
   variable: "--font-sans",
+});
+
+const fontSerif = FontSerif({
+  subsets: ["latin"],
+  weight: ["400", "600", "700"],
+  variable: "--font-serif",
 });
 
 type MetadataProps = {
@@ -58,7 +64,7 @@ export default async function LocaleLayout({
   params,
 }: {
   children: React.ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
 
@@ -83,8 +89,9 @@ export default async function LocaleLayout({
       </head>
       <body
         className={cn(
-          "min-h-screen bg-background flex flex-col dark",
-          fontSans.variable
+          "min-h-screen bg-background flex flex-col dark font-sans",
+          fontSans.variable,
+          fontSerif.variable
         )}
       >
         <NextIntlClientProvider messages={messages}>

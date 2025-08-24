@@ -129,8 +129,8 @@ function SuccessContent() {
     >
       <motion.div variants={fadeIn} className="mb-6">
         <div className="relative">
-          <div className="absolute inset-0 bg-green-100 rounded-full scale-150 opacity-20 animate-pulse"></div>
-          <CheckCircle className="w-20 h-20 text-green-500 relative z-10" />
+          <div className="absolute inset-0 bg-green-100 dark:bg-green-900/20 rounded-full scale-150 opacity-20 animate-pulse"></div>
+          <CheckCircle className="w-20 h-20 text-green-500 dark:text-green-400 relative z-10" />
         </div>
       </motion.div>
 
@@ -205,8 +205,8 @@ function SuccessContent() {
     >
       <motion.div variants={fadeIn} className="mb-6">
         <div className="relative">
-          <div className="absolute inset-0 bg-red-100 rounded-full scale-150 opacity-20"></div>
-          <XCircle className="w-20 h-20 text-red-500 relative z-10" />
+          <div className="absolute inset-0 bg-destructive/10 rounded-full scale-150 opacity-20"></div>
+          <XCircle className="w-20 h-20 text-destructive relative z-10" />
         </div>
       </motion.div>
 

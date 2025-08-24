@@ -17,7 +17,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <FeatureBadge label={t("badge.label")} className="mb-8" />
-          <h2 className="text-center z-10 text-2xl md:text-4xl font-sans font-semibold mb-4">
+          <h2 className="text-center z-10 text-2xl md:text-4xl font-serif font-semibold mb-4">
             <span className="bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground text-transparent">
               {t("title")}
             </span>
@@ -32,15 +32,15 @@ export default function Testimonials() {
             {testimonials.map((testimonial, index) => (
               <div
                 key={`${testimonial.name}-${index}`}
-                className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-card p-8 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:-translate-y-1"
+                className="group relative h-full w-full overflow-hidden rounded-2xl border border-primary/10 bg-background p-8 shadow-sm transition-all duration-300 hover:border-primary/20 hover:shadow-lg hover:-translate-y-1"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                <div className="absolute inset-0 bg-background/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="relative z-10">
                   <blockquote className="text-foreground leading-relaxed text-center mb-6 text-sm">
-                    "{testimonial.content}"
+                    &ldquo;{testimonial.content}&rdquo;
                   </blockquote>
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-3">
+                    <div className="w-12 h-12 rounded-full bg-card flex items-center justify-center mb-3">
                       <span className="text-lg font-semibold text-primary">
                         {testimonial.name.charAt(0)}
                       </span>

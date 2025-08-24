@@ -61,20 +61,20 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
             <source src={feature.videoUrl} type="video/mp4" />
             Your browser does not support the video tag.
           </video>
-          <div className="absolute inset-0 rounded-xl bg-gradient-to-tr from-purple-500/10 to-pink-500/10 pointer-events-none" />
+          <div className="absolute inset-0 rounded-xl bg-background pointer-events-none" />
         </div>
       </div>
 
       {/* Content Section */}
       <div className={`${isEven ? 'md:order-2' : 'md:order-1'} space-y-6`}>
-        <h3 className="text-xl font-bold text-white leading-tight">
+        <h3 className="text-xl font-bold text-foreground leading-tight">
           {feature.title}
         </h3>
-        <p className="text-sm text-gray-300 leading-relaxed">
+        <p className="text-sm text-muted-foreground leading-relaxed">
           {feature.description}
         </p>
         <Link href="/veo4">
-          <Button className="bg-blue-600 hover:bg-blue-700 text-white rounded-full text-sm px-4 py-2 transition-all duration-300 hover:scale-105">
+          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full text-sm px-4 py-2 transition-all duration-300 hover:scale-105">
             {feature.buttonText}
           </Button>
         </Link>
@@ -85,14 +85,14 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
 
 export default function Veo4FeatureShowcase() {
   return (
-    <section className="relative py-20 bg-transparent text-white">
+    <section className="relative py-20 bg-transparent">
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
             🚀 Veo 4 Core Features
           </h2>
-          <p className="text-lg text-gray-300 max-w-3xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
             Discover the revolutionary capabilities that make Veo 4 the most advanced AI video generation platform
           </p>
         </div>
@@ -110,14 +110,14 @@ export default function Veo4FeatureShowcase() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-20">
-          <h3 className="text-2xl font-bold text-white mb-4">
+          <h3 className="text-2xl font-bold text-foreground mb-4">
             Ready to Create Amazing Videos?
           </h3>
-          <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
+          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
             Join thousands of creators who are already using Veo 4 to bring their ideas to life
           </p>
           <Link href="/veo4">
-            <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
+            <Button className="highlight-button px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
               🎬 Start Creating Now
             </Button>
           </Link>
