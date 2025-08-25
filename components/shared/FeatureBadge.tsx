@@ -20,7 +20,7 @@ export default function FeatureBadge({
   const content = (
     <div className="rounded-full border px-2 py-1 pr-2 text-center text-sm font-medium hover:bg-muted hover:border-primary/20 group items-center gap-x-2 flex transition-all duration-300 ease-in-out">
       {label && (
-        <div className="text-white highlight-bg rounded-2xl border px-1.5 py-0.5 text-xs font-semibold tracking-tight">
+        <div className="text-textMain highlight-bg rounded-2xl border px-1.5 py-0.5 text-xs font-semibold tracking-tight">
           {label}
         </div>
       )}
@@ -31,7 +31,7 @@ export default function FeatureBadge({
         <div className="pr-3 transition-transform duration-300 group-hover:translate-x-1">
           <ArrowRight
             name="ArrowRight"
-            className="h-4 w-4 text-gray-400 dark:text-gray-500"
+            className="h-4 w-4 text-textSubtle"
           />
         </div>
       )}

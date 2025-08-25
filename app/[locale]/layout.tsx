@@ -89,7 +89,7 @@ export default async function LocaleLayout({
       </head>
       <body
         className={cn(
-          "min-h-screen bg-background flex flex-col dark font-sans",
+          "min-h-screen bg-background flex flex-col font-sans",
           fontSans.variable,
           fontSerif.variable
         )}

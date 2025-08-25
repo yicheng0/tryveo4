@@ -26,9 +26,6 @@
     --main: 214 95% 67%;  /* Blue for coffee bg */
     --main-foreground: 0 0% 100%;  /* #ffffff */
     --main-hover: #2563eb;
-
-    --main-gradient-from: #2979FF;
-    --main-gradient-to: #1e40af;
   }
 }
 @layer components {
@@ -42,14 +39,6 @@
   }
 
   .highlight-bg {
-    background: linear-gradient(
-      to right,
-      var(--main-gradient-from),
-      var(--main-gradient-to)
-    );
-  }
-
-  .dark .highlight-bg {
     background: linear-gradient(
       to right,
       var(--main-gradient-from),
@@ -98,37 +87,37 @@
 
   /* Removed grid backgrounds for clean unified background */
 
-  /* Simplified glass effects for unified background */
+  /* Simplified glass effects for unified dark background */
   .glass-card {
-    background: rgba(33,26,20,0.95);
-    border: 1px solid rgba(245,158,11,0.1);
-    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    background: rgba(26,26,26,0.95);
+    border: 1px solid rgba(42,42,42,0.3);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.2);
   }
 
-  /* Raphael.app style specific overrides */
+  /* Dark theme unified overrides */
   body {
-    background: #211a14 !important;
-    color: #f4f1ec;
+    background: #121212 !important;
+    color: #ffffff;
   }
   
-  /* Enhanced text readability on coffee background */
+  /* Enhanced text readability on dark background */
   .text-enhanced-light {
-    color: #fef9f3;
-    text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+    color: #ffffff;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.8);
   }
   
   .text-enhanced-muted {
-    color: #d4c4b0;
+    color: #b3b3b3;
   }
   
-  /* Coffee-toned accents */
+  /* Blue-toned accents for consistency */
   .accent-warm {
-    color: #f59e0b;
+    color: #1e3a8a;
   }
   
   .accent-warm-bg {
-    background: rgba(245,158,11,0.1);
-    border: 1px solid rgba(245,158,11,0.2);
+    background: rgba(30,58,138,0.1);
+    border: 1px solid rgba(30,58,138,0.2);
   }
 }
 

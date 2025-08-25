@@ -12,7 +12,7 @@ const Header = () => {
   const t = useTranslations("Home");
 
   return (
-    <header className="w-full px-6 py-4 text-white bg-background flex items-center justify-between">
+    <header className="w-full px-6 py-4 bg-white dark:bg-bgMain text-gray-900 dark:text-textMain shadow-sm dark:shadow-none border-b border-gray-200 dark:border-borderSubtle z-50 flex items-center justify-between">
       {/* 左侧区域：Logo + Nav */}
       <div className="flex items-center space-x-8">
         {/* Logo */}
@@ -20,10 +20,10 @@ const Header = () => {
           href="/"
           title={t("title")}
           prefetch={true}
-          className="flex items-center space-x-2"
+          className="flex items-center space-x-2 hover:opacity-80 transition-opacity"
         >
-          <Image src="/logo.png" alt="Logo" width={24} height={24} className="w-6 h-6" />
-          <span className="text-xl font-semibold">{t("title")}</span>
+          <Image src="/logo.png" alt="Logo" width={28} height={28} className="w-7 h-7" />
+          <span className="text-xl font-semibold tracking-wide text-gray-900 dark:text-textMain">{t("title")}</span>
         </I18nLink>
 
         {/* 导航 */}
@@ -31,9 +31,9 @@ const Header = () => {
       </div>
 
       {/* 右侧按钮区域 */}
-      <div className="flex items-center space-x-2">
+      <div className="flex items-center space-x-3">
         {/* PC */}
-        <div className="hidden lg:flex items-center space-x-2">
+        <div className="hidden lg:flex items-center space-x-3">
           <LocaleSwitcher />
           <ThemeToggle />
           <UserAvatar />

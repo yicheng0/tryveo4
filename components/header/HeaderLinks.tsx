@@ -36,19 +36,9 @@ const HeaderLinks = () => {
             className={cn(
               "px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200",
               isCurrentPage
-                ? "bg-white/5 text-[#FACC15]"
-                : "text-white/80 hover:text-white hover:scale-105"
+                ? "bg-primaryBlue text-white font-semibold"
+                : "text-gray-700 dark:text-textSubtle hover:text-gray-900 dark:hover:text-textMain hover:bg-gray-100 dark:hover:bg-bgCard"
             )}
-            onMouseEnter={(e) => {
-              if (!isCurrentPage) {
-                e.currentTarget.style.backgroundColor = 'rgba(255,255,255,0.06)';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!isCurrentPage) {
-                e.currentTarget.style.backgroundColor = 'transparent';
-              }
-            }}
           >
             {link.name}
             {link.target && link.target === "_blank" && (

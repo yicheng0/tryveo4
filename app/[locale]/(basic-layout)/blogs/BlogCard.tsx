@@ -17,7 +17,7 @@ export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
         return {
           label: "Members",
           icon: <UserIcon className="h-3 w-3" />,
-          bgColor: "bg-blue-600/90",
+          bgColor: "bg-primaryBlue/90",
         };
       default:
         return {
@@ -37,7 +37,7 @@ export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
       prefetch={false}
       className="group block"
     >
-      <div className="bg-card border border-gray-200 dark:border-gray-800 rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:translate-y-[-3px]">
+      <div className="bg-card border border-borderSubtle rounded-xl overflow-hidden shadow-sm transition-all duration-300 hover:shadow-md hover:translate-y-[-3px]">
         <div className="relative h-48 w-full overflow-hidden">
           <Image
             src={post.featured_image_url || "/placeholder.svg"}
@@ -49,14 +49,14 @@ export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
           <div className="absolute top-3 right-3 flex gap-2">
             {post.is_pinned && (
               <div
-                className="bg-amber-500/90 text-white rounded-full p-1.5"
+                className="bg-amber-500/90 text-textMain rounded-full p-1.5"
                 title="Pinned Post"
               >
                 <PinIcon className="h-3.5 w-3.5" />
               </div>
             )}
             <div
-              className={`${visibilityInfo.bgColor} text-white text-xs px-2 py-1 rounded-full flex items-center gap-1`}
+              className={`${visibilityInfo.bgColor} text-textMain text-xs px-2 py-1 rounded-full flex items-center gap-1`}
               title={visibilityInfo.label}
             >
               {visibilityInfo.icon}
@@ -64,7 +64,7 @@ export function BlogCard({ post, locale }: { post: BlogPost; locale: string }) {
             </div>
           </div>
 
-          <div className="absolute bottom-3 left-3 bg-slate-900/80 text-white text-xs px-2.5 py-1 rounded-full">
+          <div className="absolute bottom-3 left-3 bg-bgMain/80 text-textMain text-xs px-2.5 py-1 rounded-full">
             {dayjs(post.published_at).format("MMM D, YYYY")}
           </div>
         </div>

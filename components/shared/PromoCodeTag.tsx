@@ -27,16 +27,16 @@ export default function PromoCodeTag({
 
   return (
     <div className="flex justify-center my-4">
-      <div className="inline-flex items-center rounded-lg bg-white dark:bg-gray-800 shadow-sm border border-indigo-200 dark:border-gray-700 overflow-hidden">
-        <div className="flex items-center px-3 py-2 bg-indigo-50 dark:bg-indigo-900/30 border-r border-indigo-200 dark:border-gray-700">
-          <Tag className="h-4 w-4 text-indigo-600 dark:text-indigo-400 mr-2" />
-          <span className="text-xs font-medium text-indigo-600 dark:text-indigo-400">
+      <div className="inline-flex items-center rounded-lg bg-bgCard shadow-sm border border-borderSubtle overflow-hidden">
+        <div className="flex items-center px-3 py-2 bg-primaryBlue/10 border-r border-borderSubtle">
+          <Tag className="h-4 w-4 text-primaryBlue mr-2" />
+          <span className="text-xs font-medium text-primaryBlue">
             {t("limitedTimeOffer")}: {t("save", { discount })}
           </span>
         </div>
 
-        <div className="px-3 py-2 flex items-center border-r border-indigo-200 dark:border-gray-700">
-          <code className="font-mono font-medium text-sm text-gray-800 dark:text-gray-200">
+        <div className="px-3 py-2 flex items-center border-r border-borderSubtle">
+          <code className="font-mono font-medium text-sm text-textMain">
             {code}
           </code>
         </div>
@@ -45,13 +45,13 @@ export default function PromoCodeTag({
           onClick={copyToClipboard}
           variant="ghost"
           size="sm"
-          className="px-3 h-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-none"
+          className="px-3 h-full text-textSubtle hover:bg-bgMain rounded-none"
         >
           {isCopied ? t("copied") : <Copy className="h-3.5 w-3.5" />}
         </Button>
 
         {expiryDate && (
-          <div className="hidden sm:flex items-center pl-2 pr-3 text-xs text-gray-500 dark:text-gray-400">
+          <div className="hidden sm:flex items-center pl-2 pr-3 text-xs text-textSubtle">
             {t("validUntil")}: {expiryDate}
           </div>
         )}

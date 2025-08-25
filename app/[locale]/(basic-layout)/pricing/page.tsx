@@ -1,7 +1,6 @@
 import { getPublicPricingPlans } from "@/actions/prices/public";
 import { PricingCardDisplay } from "@/components/home/PricingCardDisplay";
 import FeatureBadge from "@/components/shared/FeatureBadge";
-import { BG1 } from "@/components/shared/BGs";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { DEFAULT_LOCALE } from "@/i18n/routing";
 import { PricingPlan } from "@/types/pricing";
@@ -71,10 +70,8 @@ export default async function PricingPage() {
   };
 
   return (
-    <div className="min-h-screen w-full relative">
-      <BG1 />
-      
-      <section className="py-20 relative z-10">
+    <div className="min-h-screen w-full bg-white dark:bg-bgMain text-gray-900 dark:text-textMain">
+      <section className="py-24 px-6 md:px-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <FeatureBadge
@@ -82,22 +79,20 @@ export default async function PricingPage() {
               text={t("badge.text")}
               className="mb-8"
             />
-            <h1 className="text-center z-10 text-3xl md:text-6xl font-sans font-semibold mb-4">
-              <span className="bg-clip-text bg-gradient-to-b from-foreground to-muted-foreground text-transparent">
-                {t("title")}
-              </span>
+            <h1 className="text-center text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-gray-900 dark:text-textMain">
+              {t("title")}
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">
+            <p className="text-lg text-gray-600 dark:text-textSubtle max-w-3xl mx-auto">
               {t("description")}
             </p>
           </div>
 
           <Tabs defaultValue="annual" className="w-full mx-auto">
-            <TabsList className="grid w-fit mx-auto grid-cols-2 h-12 p-1 bg-gray-100 dark:bg-gray-700 rounded-lg">
+            <TabsList className="grid w-fit mx-auto grid-cols-2 h-12 p-1 bg-bgCard rounded-xl">
               {monthlyPlans.length > 0 && (
                 <TabsTrigger
                   value="monthly"
-                  className="px-6 py-2 text-sm font-normal rounded-md data-[state=active]:bg-white data-[state=active]:shadow-sm dark:data-[state=active]:bg-gray-800 dark:text-gray-300 data-[state=active]:text-gray-900 dark:data-[state=active]:text-white"
+                  className="px-6 py-2 text-sm font-medium rounded-xl data-[state=active]:bg-primaryBlue data-[state=active]:shadow-md text-textSubtle data-[state=active]:text-textMain transition duration-200"
                 >
                   {t("monthly")}
                 </TabsTrigger>
@@ -105,13 +100,13 @@ export default async function PricingPage() {
               {annualPlans.length > 0 && (
                 <TabsTrigger
                   value="annual"
-                  className="px-6 py-2 text-sm font-normal rounded-md data-[state=active]:bg-white data-[state=active]:shadow-sm dark:data-[state=active]:bg-gray-800 dark:text-gray-300 data-[state=active]:text-gray-900 dark:data-[state=active]:text-white relative"
+                  className="px-6 py-2 text-sm font-medium rounded-xl data-[state=active]:bg-primaryBlue data-[state=active]:shadow-md text-textSubtle data-[state=active]:text-textMain transition duration-200 relative"
                 >
                   <span className="flex items-center gap-2">
                     {t("annual")}
                     <span className="inline-flex items-center gap-1 text-xs font-semibold">
-                      <Gift className="w-4 h-4 text-main" />
-                      <span className="highlight-text">{t("saveTip")}</span>
+                      <Gift className="w-4 h-4 text-primaryBlue" />
+                      <span className="text-primaryBlue">{t("saveTip")}</span>
                     </span>
                   </span>
                 </TabsTrigger>

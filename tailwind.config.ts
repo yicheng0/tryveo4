@@ -61,13 +61,6 @@ const config = {
   				DEFAULT: 'var(--card)',
   				foreground: 'var(--card-foreground)'
   			},
-  			chart: {
-  				'1': 'var(--chart-1)',
-  				'2': 'var(--chart-2)',
-  				'3': 'var(--chart-3)',
-  				'4': 'var(--chart-4)',
-  				'5': 'var(--chart-5)'
-  			},
   			'color-1': 'hsl(var(--color-1))',
   			'color-2': 'hsl(var(--color-2))',
   			'color-3': 'hsl(var(--color-3))',
@@ -82,7 +75,25 @@ const config = {
   				'accent-foreground': 'var(--sidebar-accent-foreground)',
   				border: 'var(--sidebar-border)',
   				ring: 'var(--sidebar-ring)'
-  			}
+  			},
+  			
+  			// 自定义颜色系统
+  			primaryBlue: '#1e3a8a',       // 主按钮深蓝
+  			primaryHover: '#1e40af',      // 按钮 hover
+  			
+  			// 辅助灰色系
+  			textMain: 'rgb(var(--text-main) / <alpha-value>)',
+  			textSubtle: 'rgb(var(--text-subtle) / <alpha-value>)',
+  			borderSubtle: 'rgb(var(--border-subtle) / <alpha-value>)',
+  			
+  			// 背景
+  			bgMain: 'rgb(var(--bg-main) / <alpha-value>)',
+  			bgCard: 'rgb(var(--bg-card) / <alpha-value>)',
+  			
+  			
+  			// CTA 渐变可选
+  			gradientFrom: '#4f46e5',
+  			gradientTo: '#6366f1'
   		},
   		borderRadius: {
   			lg: 'var(--radius)',

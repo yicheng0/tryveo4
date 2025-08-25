@@ -1,5 +1,6 @@
 "use client";
 
+import { memo } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -10,15 +11,11 @@ import {
   Video, 
   Image as ImageIcon,
   Palette,
-  Clock,
-  Globe,
-  Users,
   BookOpen,
   Megaphone,
   Camera,
   ArrowRight,
-  Star,
-  CheckCircle
+  Star
 } from "lucide-react";
 import Link from "next/link";
 
@@ -131,36 +128,35 @@ const testimonials = [
   }
 ];
 
-export default function Veo4Features() {
+function Veo4Features() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-bgMain">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-background">
-        <div className="absolute inset-0 bg-grid-pattern opacity-5" />
-        <div className="relative max-w-7xl mx-auto px-4 py-16 sm:py-24">
+      <section className="relative overflow-hidden bg-bgMain">
+        <div className="relative max-w-7xl mx-auto px-6 md:px-20 py-24">
           <div className="text-center">
-            <Badge className="mb-4 bg-primary/10 text-primary">
-              <Sparkles className="h-3 w-3 mr-1" />
+            <Badge className="mb-8 bg-primaryBlue text-textMain font-medium px-4 py-2">
+              <Sparkles className="h-4 w-4 mr-2" />
               Powered by Veo 4
             </Badge>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-6">
+            <h1 className="text-4xl md:text-6xl font-extrabold leading-tight mb-6 text-textMain">
               Explore the Power of{" "}
-              <span className="highlight-text">
+              <span className="text-primaryBlue">
                 Veo 4 AI
               </span>
             </h1>
-            <p className="text-xl sm:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
+            <p className="text-lg text-textSubtle mb-8 max-w-3xl mx-auto">
               Free, Fast, and Feature-Rich video generation. Create professional-quality videos 
               from text or images in minutes with cutting-edge AI technology.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/veo4">
-                <Button size="lg" className="highlight-button">
+                <Button variant="primaryBlue" className="px-6 py-3 rounded-xl">
                   <Play className="h-5 w-5 mr-2" />
                   Start Creating Now
                 </Button>
               </Link>
-              <Button size="lg" variant="outline" className="border-2">
+              <Button className="border border-borderSubtle bg-bgCard hover:bg-bgMain text-textSubtle hover:text-textMain font-medium px-6 py-3 rounded-xl transition duration-200">
                 <Video className="h-5 w-5 mr-2" />
                 Watch Demo
               </Button>
@@ -170,29 +166,29 @@ export default function Veo4Features() {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-16 sm:py-24">
-        <div className="max-w-7xl mx-auto px-4">
+      <section className="py-20">
+        <div className="max-w-7xl mx-auto px-6 md:px-20">
           <div className="text-center mb-16">
-            <h2 className="text-3xl sm:text-4xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 text-textMain">
               Revolutionary Features
             </h2>
-            <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-lg text-textSubtle max-w-2xl mx-auto">
               Discover what makes Veo 4 the most advanced AI video generation platform available today.
             </p>
           </div>
           
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {features.map((feature, index) => (
-              <Card key={index} className="group glass-card hover:shadow-xl transition-all duration-300 border-0">
+              <Card key={index} className="group bg-bgCard border-borderSubtle hover:shadow-xl transition-all duration-300">
                 <CardContent className="p-8">
-                  <div className={`inline-flex p-3 rounded-2xl ${feature.bgColor} mb-6`}>
-                    <feature.icon className={`h-8 w-8 ${feature.color}`} />
+                  <div className="inline-flex p-4 rounded-2xl bg-primaryBlue/10 mb-6">
+                    <feature.icon className="h-8 w-8 text-primaryBlue" />
                   </div>
-                  <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
-                  <p className="text-muted-foreground mb-6 leading-relaxed">
+                  <h3 className="text-2xl font-bold mb-4 text-textMain">{feature.title}</h3>
+                  <p className="text-textSubtle mb-6 leading-relaxed">
                     {feature.description}
                   </p>
-                  <Button className="group-hover:translate-x-1 transition-transform">
+                  <Button variant="primaryBlue" className="px-6 py-3 rounded-xl group-hover:translate-x-1">
                     {feature.actionText}
                     <ArrowRight className="h-4 w-4 ml-2" />
                   </Button>
@@ -336,3 +332,5 @@ export default function Veo4Features() {
     </div>
   );
 }
+
+export default memo(Veo4Features);

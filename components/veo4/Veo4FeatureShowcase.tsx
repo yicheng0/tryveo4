@@ -1,6 +1,7 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { LazyVideo } from "@/components/ui/lazy-video";
 import Link from "next/link";
 
 interface FeatureItem {
@@ -49,32 +50,19 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
     <div className={`grid grid-cols-1 md:grid-cols-2 gap-10 items-center ${isEven ? '' : 'md:flex-row-reverse'}`}>
       {/* Video Section */}
       <div className={`${isEven ? 'md:order-1' : 'md:order-2'}`}>
-        <div className="relative">
-          <video
-            className="rounded-xl shadow-md w-full"
-            controls
-            muted
-            autoPlay
-            loop
-            playsInline
-          >
-            <source src={feature.videoUrl} type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-          <div className="absolute inset-0 rounded-xl bg-background pointer-events-none" />
-        </div>
+        <LazyVideo src={feature.videoUrl} />
       </div>
 
       {/* Content Section */}
       <div className={`${isEven ? 'md:order-2' : 'md:order-1'} space-y-6`}>
-        <h3 className="text-xl font-bold text-foreground leading-tight">
+        <h3 className="text-2xl font-bold text-textMain leading-tight">
           {feature.title}
         </h3>
-        <p className="text-sm text-muted-foreground leading-relaxed">
+        <p className="text-lg text-textSubtle leading-relaxed">
           {feature.description}
         </p>
         <Link href="/veo4">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground rounded-full text-sm px-4 py-2 transition-all duration-300 hover:scale-105">
+          <Button variant="primaryBlue" className="px-6 py-3 rounded-xl">
             {feature.buttonText}
           </Button>
         </Link>
@@ -85,14 +73,14 @@ const FeatureCard = ({ feature, index }: FeatureCardProps) => {
 
 export default function Veo4FeatureShowcase() {
   return (
-    <section className="relative py-20 bg-transparent">
-      <div className="max-w-7xl mx-auto px-4 relative z-10">
+    <section className="relative py-20 bg-bgMain">
+      <div className="max-w-7xl mx-auto px-6 md:px-20 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <h2 className="text-4xl md:text-6xl font-extrabold text-textMain mb-4 leading-tight">
             🚀 Veo 4 Core Features
           </h2>
-          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg text-textSubtle max-w-3xl mx-auto">
             Discover the revolutionary capabilities that make Veo 4 the most advanced AI video generation platform
           </p>
         </div>
@@ -110,14 +98,14 @@ export default function Veo4FeatureShowcase() {
 
         {/* Bottom CTA */}
         <div className="text-center mt-20">
-          <h3 className="text-2xl font-bold text-foreground mb-4">
+          <h3 className="text-4xl font-bold text-textMain mb-4">
             Ready to Create Amazing Videos?
           </h3>
-          <p className="text-muted-foreground mb-8 max-w-2xl mx-auto">
+          <p className="text-textSubtle mb-8 max-w-2xl mx-auto text-lg">
             Join thousands of creators who are already using Veo 4 to bring their ideas to life
           </p>
           <Link href="/veo4">
-            <Button className="highlight-button px-8 py-3 rounded-full font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg">
+            <Button variant="primaryBlue" size="lg" className="rounded-xl">
               🎬 Start Creating Now
             </Button>
           </Link>

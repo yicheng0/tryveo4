@@ -13,14 +13,23 @@ html {
     @apply border-border;
   }
 
+  /* Light theme (default) */
   body {
-    background: #14100F !important;
-    color: #f4f1ec !important;
-    @apply text-foreground;
+    @apply bg-white text-black;
   }
   
   html {
-    background: #14100F !important;
+    @apply bg-white;
+  }
+  
+  /* Dark theme */
+  .dark body {
+    background: #121212 !important;
+    color: #ffffff !important;
+  }
+  
+  .dark html {
+    background: #121212 !important;
   }
   
   * {
@@ -30,8 +39,16 @@ html {
 
 @layer base {
   :root {
-    --background: #14100F;
-    --foreground: #f4f1ec;
+    /* Light theme variables */
+    --background: #ffffff;
+    --foreground: #000000;
+    
+    /* Custom theme colors for light mode */
+    --text-main: 0 0 0;        /* Black text */
+    --text-subtle: 107 114 128; /* Gray-500 */
+    --border-subtle: 229 231 235; /* Gray-200 */
+    --bg-main: 255 255 255;      /* White */
+    --bg-card: 249 250 251;      /* Gray-50 */
     
     /* Veo4 App Theme Variables */
     --akr-color-background: #ffffff;
@@ -87,8 +104,16 @@ html {
   }
   
   .dark {
-    --background: #14100F;
-    --foreground: #f4f1ec;
+    /* Dark theme variables */
+    --background: #121212;
+    --foreground: #ffffff;
+    
+    /* Custom theme colors for dark mode */
+    --text-main: 255 255 255;    /* White text */
+    --text-subtle: 179 179 179;  /* Light gray */
+    --border-subtle: 42 42 42;   /* Dark gray borders */
+    --bg-main: 18 18 18;         /* Very dark gray */
+    --bg-card: 26 26 26;         /* Slightly lighter dark gray */
     
     /* Veo4 App Dark Theme Variables */
     --akr-color-background: #0f172a;
