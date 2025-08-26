@@ -2,9 +2,15 @@
    "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "build:cloudflare": "next build && npm run build:cf-functions",
+    "build:cf-functions": "node scripts/build-cf-functions.js",
     "start": "next start",
     "lint": "next lint",
     "analyze": "ANALYZE=true next build",
+    "deploy": "npm run build:cloudflare && wrangler pages deploy .next --project-name tryveo4",
+    "deploy:preview": "npm run build:cloudflare && wrangler pages deploy .next --project-name tryveo4 --branch preview",
+    "cf:dev": "wrangler pages dev .next --port 3000",
+    "test:cloudflare": "node scripts/test-cloudflare-build.js",
     "db:push": "supabase db push",
     "db:pull": "supabase db pull",
     "db:reset": "supabase db reset",
@@ -111,6 +117,7 @@
     "eslint-config-next": "15.0.4",
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
-    "typescript": "^5"
+    "typescript": "^5",
+    "wrangler": "^3.78.12"
   }
 }

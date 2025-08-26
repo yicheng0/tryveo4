@@ -5,6 +5,15 @@ const withNextIntl = createNextIntlPlugin();
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // Cloudflare Pages configuration with Functions support
+  trailingSlash: true,
+  skipTrailingSlashRedirect: true,
+  
+  // Static generation for better Cloudflare compatibility
+  generateBuildId: async () => {
+    return 'build-' + Date.now();
+  },
+  
   redirects: async () => [
     {
       source: "/dashboard",
@@ -12,10 +21,9 @@ const nextConfig = {
       permanent: true,
     },
   ],
+  
   images: {
-    unoptimized:
-      process.env.NEXT_PUBLIC_OPTIMIZED_IMAGES &&
-      process.env.NEXT_PUBLIC_OPTIMIZED_IMAGES === "false",
+    unoptimized: true, // Required for Cloudflare Pages
     remotePatterns: [
       ...(process.env.R2_PUBLIC_URL
         ? [
@@ -26,6 +34,7 @@ const nextConfig = {
         : []),
     ],
   },
+  
   compiler: {
     removeConsole:
       process.env.NODE_ENV === "production"
@@ -33,6 +42,24 @@ const nextConfig = {
             exclude: ["error"],
           }
         : false,
+  },
+  
+  // Experimental features for edge compatibility
+  experimental: {
+    serverComponentsExternalPackages: ['@supabase/supabase-js'],
+  },
+  
+  // Webpack configuration for Cloudflare compatibility
+  webpack: (config, { dev, isServer }) => {
+    if (!dev && !isServer) {
+      config.resolve.fallback = {
+        ...config.resolve.fallback,
+        fs: false,
+        net: false,
+        tls: false,
+      };
+    }
+    return config;
   },
 };
 

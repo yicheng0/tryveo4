@@ -48,7 +48,7 @@ export async function generateMetadata({
 
   return constructMetadata({
     page: "Home",
-    title: "Free Veo 4 AI Video Generator – Try Online Veo 4 Free at tryveo3.com",
+    title: "Veo 4 AI Video Generator - Free Online Tool",
     description: t("description"),
     locale: locale as Locale,
     path: `/`,

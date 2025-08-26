@@ -109,19 +109,6 @@ export default function Veo4FeatureShowcase() {
         </div>
 
         {/* Bottom CTA */}
-        <div className="text-center mt-20">
-          <h3 className="text-4xl font-bold text-textMain mb-4">
-            Ready to Create Amazing Videos?
-          </h3>
-          <p className="text-textSubtle mb-8 max-w-2xl mx-auto text-lg">
-            Join thousands of creators who are already using Veo 4 to bring their ideas to life
-          </p>
-          <Link href="/veo4">
-            <Button variant="primaryBlue" size="lg" className="rounded-xl">
-              🎬 Start Creating Now
-            </Button>
-          </Link>
-        </div>
       </div>
     </section>
   );

@@ -8,37 +8,60 @@ const intlMiddleware = createIntlMiddleware(routing);
 const referralParams = ['utm_source', 'ref', 'via', 'aff', 'referral', 'referral_code'];
 
 export async function middleware(request: NextRequest): Promise<NextResponse> {
-  let referralValue: string | null = null;
+  try {
+    let referralValue: string | null = null;
 
-  for (const param of referralParams) {
-    const value = request.nextUrl.searchParams.get(param);
-    if (value) {
-      referralValue = value;
-      break;
+    // Extract referral parameters
+    for (const param of referralParams) {
+      const value = request.nextUrl.searchParams.get(param);
+      if (value) {
+        referralValue = value;
+        break;
+      }
     }
-  }
 
-  const supabaseResponse = await updateSession(request);
+    // Process Supabase authentication
+    const supabaseResponse = await updateSession(request);
 
-  if (supabaseResponse.headers.get('location')) {
+    // If Supabase middleware returned a redirect, handle referral and return
+    if (supabaseResponse.headers.get('location')) {
+      if (referralValue) {
+        supabaseResponse.cookies.set('referral_source', referralValue, {
+          httpOnly: true,
+          secure: true,
+          sameSite: 'lax',
+          maxAge: 60 * 60 * 24 * 30 // 30 days
+        });
+      }
+      return supabaseResponse;
+    }
+
+    // Process internationalization
+    const intlResponse = intlMiddleware(request);
+
+    // Set referral cookie if present
     if (referralValue) {
-      supabaseResponse.cookies.set('referral_source', referralValue);
+      intlResponse.cookies.set('referral_source', referralValue, {
+        httpOnly: true,
+        secure: true,
+        sameSite: 'lax',
+        maxAge: 60 * 60 * 24 * 30 // 30 days
+      });
     }
-    return supabaseResponse;
+
+    // Copy Supabase cookies to intl response
+    const supabaseCookies = supabaseResponse.cookies.getAll();
+    supabaseCookies.forEach((cookie) => {
+      const { name, value, ...options } = cookie;
+      intlResponse.cookies.set(name, value, options);
+    });
+
+    return intlResponse;
+  } catch (error) {
+    console.error('Middleware error:', error);
+    // Fallback to basic intl middleware if something goes wrong
+    return intlMiddleware(request);
   }
-
-  const intlResponse = intlMiddleware(request);
-
-  if (referralValue) {
-    intlResponse.cookies.set('referral_source', referralValue);
-  }
-
-  supabaseResponse.cookies.getAll().forEach((cookie) => {
-    const { name, value, ...options } = cookie;
-    intlResponse.cookies.set(name, value, options);
-  });
-
-  return intlResponse;
 }
 
 export const config = {

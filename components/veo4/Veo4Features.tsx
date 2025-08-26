@@ -15,7 +15,8 @@ import {
   Megaphone,
   Camera,
   ArrowRight,
-  Star
+  Star,
+  CheckCircle
 } from "lucide-react";
 import Link from "next/link";
 
