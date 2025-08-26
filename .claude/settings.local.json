@@ -18,5 +18,6 @@
       "Bash(npm run dev:*)"
     ],
     "deny": []
-  }
+  },
+  "outputStyle": "Explanatory"
 }
