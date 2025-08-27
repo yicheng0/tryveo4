@@ -109,6 +109,7 @@ export default function Veo4FeatureShowcase() {
         </div>
 
         {/* Bottom CTA */}
+
       </div>
     </section>
   );

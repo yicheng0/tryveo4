@@ -3,6 +3,7 @@ import HowItWorks from "@/components/home/HowItWorks";
 import Testimonials from "@/components/home/Testimonials";
 import TopFeatures from "@/components/home/TopFeatures";
 import UseCases from "@/components/home/UseCases";
+import FAQ from "@/components/home/FAQ";
 import { getMessages } from "next-intl/server";
 
 export default async function HomeComponent() {
@@ -15,6 +16,7 @@ export default async function HomeComponent() {
       <TopFeatures />
       <UseCases />
       {messages.Landing.Testimonials && <Testimonials />}
+      {messages.Landing.FAQ && <FAQ />}
     </div>
   );
 }

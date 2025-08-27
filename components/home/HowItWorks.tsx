@@ -6,17 +6,17 @@ const steps = [
   {
     number: "01",
     title: "Describe Your Vision",
-    description: "Write a detailed prompt describing the video you want to create, or upload an image to animate."
+    description: "Write a detailed prompt describing the video you want to create with Veo 4 free, or upload an image to animate."
   },
   {
     number: "02", 
     title: "Choose Your Settings",
-    description: "Select duration, style preferences, and any additional parameters to customize your video."
+    description: "Select duration, style preferences, and parameters to customize your Veo 4 free video generation."
   },
   {
     number: "03",
     title: "Generate & Download",
-    description: "Let Veo 4 work its magic and download your professional-quality video in minutes."
+    description: "Let Veo 4 free work its magic and download your professional-quality video in minutes."
   }
 ];
 
@@ -26,10 +26,10 @@ function HowItWorks() {
       <div className="max-w-7xl mx-auto px-6 md:px-20">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-6xl font-extrabold leading-tight mb-4 text-gray-900 dark:text-textMain">
-            How It Works
+            How Veo 4 Free Works
           </h2>
           <p className="text-lg text-gray-600 dark:text-textSubtle max-w-2xl mx-auto">
-            Create professional videos in just three simple steps.
+            Create professional videos with Veo 4 free in just three simple steps.
           </p>
         </div>
         

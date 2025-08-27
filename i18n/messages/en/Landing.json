@@ -2,11 +2,11 @@
   "Hero": {
     "badge": {
       "label": "NEW",
-      "text": "Veo 4 AI Video Generator",
+      "text": "Veo 4 Free AI Video Generator",
       "href": "#pricing"
     },
-    "title": "Try Veo 4 AI Video Generator Free Online",
-    "description": "Create cinematic videos from text or images with synchronized dialogue, sound effects, and ambient sound. Try it free on TryVeo4.ai—no login required.",
+    "title": "Veo 4 Free - Create Professional Videos from Text with AI Generator",
+    "description": "Experience Veo 4 free video generation technology that transforms text into stunning cinematic videos. Our Veo 4 free AI tool generates professional 4K videos with realistic motion and cinematic quality - no signup required.",
     "getStarted": "Try for Free",
     "getStartedLink": "/features/v4",
     "viewDemos": "View Examples",
@@ -19,236 +19,28 @@
       "label": "FEATURES",
       "text": "Advanced AI Video Generation"
     },
-    "title": "Powered by Google's Veo 4 Technology",
-    "description": "Experience the next generation of AI video creation with cutting-edge features that bring your creative vision to life with unprecedented quality and control.",
+    "title": "Veo 4 Free Advanced AI Video Generation",
+    "description": "Experience revolutionary Veo 4 free video creation technology. Create professional videos with our Veo 4 free text-to-video generator and 4K output.",
     "moreFeatures": {
-      "title": "Explore More Capabilities",
-      "description": "Discover advanced video generation features, creative tools, and upcoming enhancements that will transform your content creation workflow.",
+      "title": "Explore Veo 4 Free Features",
+      "description": "Discover how Veo 4 free transforms your content creation workflow.",
       "button": "View All Features"
     },
     "items": [
       {
-        "title": "Text-to-Video Generation",
-        "description": "Transform your written descriptions into stunning videos with advanced AI understanding.",
-        "details": [
-          {
-            "title": "Natural Language Processing",
-            "description": "Describe your vision in plain English and watch it come to life."
-          },
-          {
-            "title": "Scene Understanding",
-            "description": "AI comprehends complex scenes, characters, and actions."
-          },
-          {
-            "title": "Style Control",
-            "description": "Choose from cinematic, documentary, animation, and more styles."
-          }
-        ],
-        "images": [
-          "/images/features/text-to-video.png"
-        ]
+        "title": "Veo 4 Free Text-to-Video",
+        "description": "Transform text into stunning videos with Veo 4 free AI and natural language processing.",
+        "images": ["/images/features/text-to-video.png"]
       },
       {
-        "title": "High-Quality Output",
-        "description": "Generate professional-grade videos with 4K resolution and cinematic quality.",
-        "details": [
-          {
-            "title": "4K Resolution",
-            "description": "Create videos in stunning 4K quality for professional use."
-          },
-          {
-            "title": "Smooth Motion",
-            "description": "Advanced motion synthesis ensures natural, fluid movement."
-          },
-          {
-            "title": "Consistent Quality",
-            "description": "Maintain visual consistency throughout your entire video."
-          }
-        ],
-        "images": [
-          "/images/features/quality-1.png",
-          "/images/features/quality-2.png"
-        ]
+        "title": "Professional 4K Quality",
+        "description": "Generate 4K videos with Veo 4 free - smooth motion and consistent quality.",
+        "images": ["/images/features/quality-1.png"]
       },
       {
         "title": "Advanced Controls",
-        "description": "Fine-tune every aspect of your video with precise control over camera movements, lighting, and timing.",
-        "details": [
-          {
-            "title": "Camera Control",
-            "description": "Direct camera angles, movements, and transitions with precision."
-          },
-          {
-            "title": "Lighting & Mood",
-            "description": "Adjust lighting conditions and atmosphere to match your vision."
-          },
-          {
-            "title": "Duration Control",
-            "description": "Generate videos from 5 seconds to 2 minutes in length."
-          }
-        ],
-        "images": [
-          "/images/features/controls-1.png",
-          "/images/features/controls-2.png"
-        ]
-      },
-      {
-        "title": "Multiple Video Formats",
-        "description": "Export your videos in various formats optimized for different platforms and use cases.",
-        "details": [
-          {
-            "title": "Social Media Ready",
-            "description": "Generate videos optimized for Instagram, TikTok, YouTube, and other platforms."
-          },
-          {
-            "title": "Professional Formats",
-            "description": "Export in MP4, MOV, and other professional video formats."
-          },
-          {
-            "title": "Custom Aspect Ratios",
-            "description": "Create videos in 16:9, 9:16, 1:1, and custom aspect ratios."
-          }
-        ],
-        "images": [
-          "/images/features/formats-1.png",
-          "/images/features/formats-2.png",
-          "/images/features/formats-3.png"
-        ]
-      },
-      {
-        "title": "Fast Generation",
-        "description": "Experience lightning-fast video generation with optimized processing and real-time preview capabilities.",
-        "details": [
-          {
-            "title": "Quick Processing",
-            "description": "Generate videos in minutes, not hours, with optimized AI processing."
-          },
-          {
-            "title": "Real-time Preview",
-            "description": "Preview your video generation progress with real-time updates."
-          },
-          {
-            "title": "Batch Generation",
-            "description": "Create multiple videos simultaneously to boost your productivity."
-          }
-        ],
-        "images": [
-          "/images/features/speed-1.png"
-        ]
-      },
-      {
-        "title": "Creative Templates",
-        "description": "Start with professionally designed templates or create completely custom videos from scratch.",
-        "details": [
-          {
-            "title": "Pre-built Templates",
-            "description": "Choose from hundreds of professionally designed video templates."
-          },
-          {
-            "title": "Custom Creation",
-            "description": "Build unique videos from scratch with complete creative freedom."
-          },
-          {
-            "title": "Style Transfer",
-            "description": "Apply artistic styles and visual effects to transform your videos."
-          }
-        ],
-        "images": [
-          "/images/features/templates-1.png",
-          "/images/features/templates-2.png",
-          "/images/features/templates-3.png"
-        ]
-      },
-      {
-        "title": "Smart Editing Tools",
-        "description": "Enhance your videos with intelligent editing features powered by AI technology.",
-        "details": [
-          {
-            "title": "Auto Scene Detection",
-            "description": "AI automatically identifies and segments different scenes in your video."
-          },
-          {
-            "title": "Smart Transitions",
-            "description": "Generate smooth, professional transitions between scenes automatically."
-          },
-          {
-            "title": "Audio Synchronization",
-            "description": "Automatically sync audio with video content for perfect timing."
-          }
-        ],
-        "images": [
-          "/images/features/editing-1.png",
-          "/images/features/editing-2.png"
-        ]
-      },
-      {
-        "title": "Project Management",
-        "description": "Organize and manage your video projects with powerful collaboration and storage features.",
-        "details": [
-          {
-            "title": "Project Organization",
-            "description": "Keep your videos organized with folders, tags, and search functionality."
-          },
-          {
-            "title": "Version Control",
-            "description": "Track changes and maintain multiple versions of your video projects."
-          },
-          {
-            "title": "Cloud Storage",
-            "description": "Securely store and access your videos from anywhere with cloud backup."
-          }
-        ],
-        "images": [
-          "/images/features/projects-1.png",
-          "/images/features/projects-2.png",
-          "/images/features/projects-3.png"
-        ]
-      },
-      {
-        "title": "Collaboration Features",
-        "description": "Work together with your team to create amazing videos with real-time collaboration tools.",
-        "details": [
-          {
-            "title": "Team Workspaces",
-            "description": "Create shared workspaces for your team with role-based access control."
-          },
-          {
-            "title": "Real-time Collaboration",
-            "description": "Multiple team members can work on the same project simultaneously."
-          },
-          {
-            "title": "Comment & Review",
-            "description": "Add comments and feedback directly on video timelines for efficient review."
-          }
-        ],
-        "images": [
-          "/images/features/collaboration-1.png",
-          "/images/features/collaboration-2.png",
-          "/images/features/collaboration-3.png"
-        ]
-      },
-      {
-        "title": "API & Integration",
-        "description": "Seamlessly integrate Veo 4 generator into your existing workflow with powerful APIs and third-party integrations.",
-        "details": [
-          {
-            "title": "RESTful API",
-            "description": "Access all Veo 4 features through our comprehensive REST API."
-          },
-          {
-            "title": "Webhook Support",
-            "description": "Get real-time notifications when your video generation is complete."
-          },
-          {
-            "title": "Third-party Integrations",
-            "description": "Connect with popular tools like Slack, Discord, and content management systems."
-          }
-        ],
-        "images": [
-          "/images/features/api-1.png",
-          "/images/features/api-2.png",
-          "/images/features/api-3.png"
-        ]
+        "description": "Fine-tune videos with Veo 4 free - camera control, lighting, and duration settings.",
+        "images": ["/images/features/controls-1.png"]
       }
     ]
   },
@@ -257,18 +49,18 @@
       "label": "USE CASES",
       "text": "Endless Creative Possibilities"
     },
-    "title": "One AI Tool, Infinite Applications",
-    "description": "From marketing campaigns to educational content, Veo 4 generator empowers creators across industries to bring their vision to life with professional-quality videos.",
+    "title": "Veo 4 Free: One AI Tool, Infinite Applications",
+    "description": "From marketing campaigns to educational content, our Veo 4 free generator empowers creators across industries to bring their vision to life with professional-quality videos at no cost.",
     "cases": [
       {
-        "title": "Marketing & Advertising",
-        "description": "Create compelling marketing videos, product demos, and social media content that drives engagement and conversions. Perfect for brands looking to scale their video marketing efforts without expensive production costs.",
+        "title": "Marketing with Veo 4 Free",
+        "description": "Create compelling marketing videos and social media content using Veo 4 free. Scale your video marketing efforts without production costs.",
         "image": "/placeholder.webp",
         "icon": "Megaphone"
       },
       {
         "title": "Education & Training",
-        "description": "Develop engaging educational content, training materials, and explainer videos. Transform complex concepts into easy-to-understand visual content that enhances learning and retention.",
+        "description": "Develop engaging educational content with Veo 4 free. Transform complex concepts into visual content that enhances learning.",
         "image": "/placeholder.webp",
         "icon": "GraduationCap"
       }
@@ -278,91 +70,92 @@
     "badge": {
       "label": "TESTIMONIALS"
     },
-    "title": "What Creators Are Saying",
-    "description": "See how Veo 4 generator is transforming video creation workflows",
+    "title": "What Creators Say About Veo 4 Free",
+    "description": "See how Veo 4 free generator is transforming video creation workflows worldwide",
     "items": [
       {
         "name": "James Roberts",
         "role": "Filmmaker",
-        "content": "Veo 4 generator helped me turn simple prompts into stunning cinematic visuals. It's revolutionized my entire filmmaking process.",
+        "content": "Veo 4 free helped me turn prompts into stunning cinematic visuals. This Veo 4 free platform revolutionized my filmmaking process.",
         "avatar": "/images/users/james.jpg"
-      },
-      {
-        "name": "Olivia Turner",
-        "role": "Social Media Creator",
-        "content": "I use Veo 4 generator to create viral short-form content for social media. The quality and speed are unmatched.",
-        "avatar": "/images/users/olivia.jpg"
       },
       {
         "name": "Emily White",
         "role": "Digital Marketer",
-        "content": "With Veo 4 generator, I can test marketing ideas visually without hiring expensive production teams. Game-changer for ROI.",
+        "content": "With Veo 4 free, I test marketing ideas without expensive production teams. Veo 4 free is a game-changer for ROI.",
         "avatar": "/images/users/emily.jpg"
-      },
-      {
-        "name": "Michael Brown",
-        "role": "Small Business Owner",
-        "content": "As a startup founder, I need quick, high-quality content. Veo 4 generator delivers professional results without any video experience.",
-        "avatar": "/images/users/michael.jpg"
-      },
-      {
-        "name": "Dr. Laura Chen",
-        "role": "Online Instructor",
-        "content": "I've started using Veo 4 generator to explain complex topics with dynamic visuals. My student engagement has skyrocketed.",
-        "avatar": "/images/users/laura.jpg"
       },
       {
         "name": "Sarah Davis",
         "role": "Content Creator",
-        "content": "Veo 4 generator has revolutionized my workflow. I can now create cinematic quality videos in minutes instead of hours.",
+        "content": "Veo 4 free revolutionized my workflow. I create cinematic videos with Veo 4 free in minutes instead of hours.",
         "avatar": "/images/users/sarah.jpg"
       }
     ]
   },
   "FAQ": {
-    "title": "Frequently Asked Questions",
-    "description": "Everything you need to know about Veo 4 generator and how it can transform your video creation process",
+    "title": "Veo 4 Free: Frequently Asked Questions",
+    "description": "Everything you need to know about Veo 4 free and how it transforms your video creation process",
     "items": [
       {
-        "question": "What is Veo 4 and how does it work?",
-        "answer": "Veo 4 is Google's latest AI video generation model that creates high-quality videos from text descriptions. Simply describe what you want to see, and our AI will generate a professional video that matches your vision with stunning detail and realism."
+        "question": "What is Veo 4 free and how does it work?",
+        "answer": "Veo 4 free is Google's latest AI video generation model at no cost. Describe your vision, and Veo 4 free generates professional videos with stunning detail."
       },
       {
         "question": "What video quality and formats can I generate?",
-        "answer": "Veo 4 generates videos in up to 4K resolution with various aspect ratios including 16:9, 9:16, and 1:1. You can export in multiple formats including MP4 and MOV, optimized for different platforms like YouTube, Instagram, TikTok, and professional use."
+        "answer": "Veo 4 free generates 4K videos with aspect ratios 16:9, 9:16, and 1:1. Export in MP4, MOV formats optimized for YouTube, Instagram, TikTok, and professional use."
       },
       {
-        "question": "How long does it take to generate a video?",
-        "answer": "Video generation typically takes 2-5 minutes depending on the complexity and length of your request. Our optimized processing ensures you get high-quality results quickly, allowing you to iterate and refine your videos efficiently."
+        "question": "How fast is Veo 4 free video generation?",
+        "answer": "Veo 4 free typically generates videos in 2-5 minutes. Our Veo 4 free platform ensures high-quality results quickly for efficient iteration."
       },
       {
-        "question": "Can I control specific aspects of the video?",
-        "answer": "Yes! Veo 4 offers advanced controls including camera movements, lighting conditions, scene transitions, and duration. You can specify detailed instructions for cinematography, mood, and visual style to achieve your exact creative vision."
+        "question": "What controls does Veo 4 free offer?",
+        "answer": "Veo 4 free provides advanced controls including camera movements, lighting, transitions, and duration. Specify detailed instructions with Veo 4 free for your exact creative vision."
       },
       {
-        "question": "Is there a limit to video length?",
-        "answer": "Currently, Veo 4 can generate videos from 5 seconds up to 2 minutes in length. This range covers most use cases from social media clips to longer-form content, with the ability to create multiple segments for longer projects."
+        "question": "Can I use Veo 4 free videos commercially?",
+        "answer": "Yes! All Veo 4 free generated videos can be used commercially. You retain full rights to your Veo 4 free content for marketing, advertising, and business use."
       },
       {
-        "question": "Can I use generated videos commercially?",
-        "answer": "Yes, all videos generated with Veo 4 can be used for commercial purposes. You retain full rights to your generated content and can use it for marketing, advertising, social media, or any other business applications."
+        "question": "What input formats does Veo 4 free accept?",
+        "answer": "Veo 4 free accepts text prompts and image uploads. Simply type descriptions or upload images to animate with our technology."
       },
       {
-        "question": "Do you offer team collaboration features?",
-        "answer": "Absolutely! Our platform includes team workspaces, real-time collaboration, project sharing, and comment systems. Multiple team members can work together on video projects with role-based access control and version management."
+        "question": "Is Veo 4 free really completely free to use?",
+        "answer": "Yes, Veo 4 free provides no-cost video generation. Access our platform without subscription fees, hidden costs, or restrictions."
+      },
+      {
+        "question": "How detailed should my prompts be for Veo 4 free?",
+        "answer": "Veo 4 free works best with detailed descriptions. Include camera angles, lighting, mood, and actions for optimal results."
+      },
+      {
+        "question": "Can I edit videos after generating with Veo 4 free?",
+        "answer": "Veo 4 free generates final videos ready for use. While direct editing isn't available, you can generate new variations with different prompts."
+      },
+      {
+        "question": "What makes Veo 4 free different from other AI video tools?",
+        "answer": "Veo 4 free uses Google's latest model for superior quality. Our platform offers 4K output, natural motion, and cinematic quality at no cost."
+      },
+      {
+        "question": "Are there usage limits with Veo 4 free?",
+        "answer": "Veo 4 free provides generous usage limits for all users. Fair usage policies ensure everyone can access our tool for creative projects."
+      },
+      {
+        "question": "How do I get started with Veo 4 free?",
+        "answer": "Getting started with Veo 4 free is simple. Visit our platform, enter your video description, and let our AI create your professional video."
       }
     ]
   },
   "CTA": {
-    "title": "Start Creating Professional Videos Today",
-    "description": "Join thousands of creators who are already using Veo 4 generator to bring their ideas to life. Transform your content creation workflow with AI-powered video generation.",
+    "title": "Start Using Veo 4 Free Today",
+    "description": "Join creators using Veo 4 free to bring ideas to life. Transform your workflow with our Veo 4 free AI-powered platform.",
     "button": "Start Creating Now",
     "trustText": "Trusted by creators worldwide",
     "features": {
-      "deploy": "Instant Generation",
+      "deploy": "Instant Veo 4 Free",
       "production": "Professional Quality",
-      "updates": "Regular Updates",
-      "i18n": "Global Support"
+      "updates": "Regular Updates"
     }
   },
   "Pricing": {
@@ -370,11 +163,9 @@
       "label": "PRICING",
       "text": "Flexible Plans for Every Creator"
     },
-    "title": "Create unlimited videos with Veo 4",
-    "description": "Choose the perfect plan for your video creation needs. From individual creators to enterprise teams, we have options that scale with your ambitions.",
+    "title": "Create Videos with Veo 4 Free",
+    "description": "Access Veo 4 free for your video creation needs. Start with our Veo 4 free plan that scales with your ambitions.",
     "annual": "Annual",
-    "monthly": "Monthly",
-    "credits": "Credits",
-    "saveTip": "Save 25%"
+    "monthly": "Monthly"
   }
 }
