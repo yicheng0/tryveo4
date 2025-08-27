@@ -16,7 +16,11 @@
       "Bash(git checkout:*)",
       "Bash(rg:*)",
       "Bash(npm run dev:*)",
-      "WebSearch"
+      "WebSearch",
+      "Bash(cat:*)",
+      "Bash(git submodule:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(git rm:*)"
     ],
     "deny": []
   },
