@@ -19,7 +19,7 @@ const testimonialsData: TestimonialData[] = [
     company: "TechCorp Studios",
     avatar: "/avatars/sarah-chen.jpg",
     rating: 5,
-    testimonial: "Veo 4 has completely revolutionized our video production pipeline. The quality is indistinguishable from traditional filming, but we can create content in minutes instead of days."
+    testimonial: 'Veo 4 has completely revolutionized our video production pipeline. The quality is indistinguishable from traditional filming, but we can create content in minutes instead of days.'
   },
   {
     id: "2",
@@ -28,7 +28,7 @@ const testimonialsData: TestimonialData[] = [
     company: "Digital Dreams Media",
     avatar: "/avatars/marcus-rodriguez.jpg",
     rating: 5,
-    testimonial: "As a solo creator, Veo 4 gives me the power of an entire production team. The AI understands context and emotion better than I ever imagined possible."
+    testimonial: 'As a solo creator, Veo 4 gives me the power of an entire production team. The AI understands context and emotion better than I ever imagined possible.'
   },
   {
     id: "3",
@@ -37,7 +37,7 @@ const testimonialsData: TestimonialData[] = [
     company: "InnovateCorp",
     avatar: "/avatars/elena-vasquez.jpg",
     rating: 4,
-    testimonial: "We've increased our video output by 500% while maintaining premium quality. Veo 4 isn't just a tool – it's a creative partner that understands our brand vision."
+    testimonial: 'We\'ve increased our video output by 500% while maintaining premium quality. Veo 4 isn\'t just a tool – it\'s a creative partner that understands our brand vision.'
   }
 ];
 
@@ -93,7 +93,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: TestimonialData }) => {
 
         {/* Testimonial text */}
         <blockquote className="text-textMain text-base leading-relaxed">
-          "{testimonial.testimonial}"
+          '{testimonial.testimonial}'
         </blockquote>
       </div>
     </div>
