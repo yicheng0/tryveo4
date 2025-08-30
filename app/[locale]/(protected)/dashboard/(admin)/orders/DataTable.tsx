@@ -160,6 +160,7 @@ export function OrdersDataTable<TData, TValue>({
     initialData,
     initialLoad,
     initialPageCount,
+    data,
   ]);
 
   const table = useReactTable({

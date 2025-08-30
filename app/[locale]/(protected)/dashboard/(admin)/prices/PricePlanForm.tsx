@@ -187,11 +187,11 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
       form.setValue("price", undefined, { shouldValidate: true });
       form.setValue("currency", "", { shouldValidate: true });
     }
-  }, [watchStripePriceId, initialData?.stripe_price_id]);
+  }, [watchStripePriceId, initialData?.stripe_price_id, form]);
 
   useEffect(() => {
     handleFetchCoupons();
-  }, [watchEnvironment]);
+  }, [watchEnvironment, handleFetchCoupons]);
 
   useEffect(() => {
     const calculateDisplayPrice = async () => {
@@ -482,7 +482,7 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
         });
       }
     }
-  }, [completion]);
+  }, [completion, form]);
 
   const handleFormatJson = (fieldName: "lang_jsonb" | "benefits_jsonb") => {
     const currentValue = form.getValues(fieldName);

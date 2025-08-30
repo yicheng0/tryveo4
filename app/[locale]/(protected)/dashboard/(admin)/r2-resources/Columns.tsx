@@ -13,6 +13,7 @@ import {
 import { ColumnDef } from "@tanstack/react-table";
 import dayjs from "dayjs";
 import { Copy, Download, MoreHorizontal, Trash2, Video } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { toast } from "sonner";
 
@@ -141,12 +142,13 @@ export const getColumns = (
       if (fileType === "image") {
         return (
           <ImagePreview>
-            <img
+            <Image
               src={previewUrl}
               alt={`Preview of ${file.key}`}
               width={64}
               height={64}
               className="object-contain rounded border bg-muted"
+              unoptimized
             />
           </ImagePreview>
         );
