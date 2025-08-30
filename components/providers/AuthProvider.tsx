@@ -6,7 +6,7 @@ import { createClient } from "@/lib/supabase/client";
 import { type AuthError, type User } from "@supabase/supabase-js";
 import Cookies from "js-cookie";
 import { redirect } from "next/navigation";
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useCallback, useContext, useEffect, useState } from "react";
 
 const getReferral = () => {
   if (typeof window === "undefined") {
@@ -47,7 +47,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   const supabase = createClient();
 
-  const fetchUserRole = async (userId: string) => {
+  const fetchUserRole = useCallback(async (userId: string) => {
     try {
       const { data, error } = await supabase
         .from("users")
@@ -66,9 +66,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       console.error("Error in fetchUserRole:", error);
       return "user";
     }
-  };
+  }, [supabase]);
 
-  const handleUser = async (user: User | null) => {
+  const handleUser = useCallback(async (user: User | null) => {
     try {
       if (user) {
         const role = await fetchUserRole(user.id);
@@ -92,7 +92,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     } finally {
       setLoading(false);
     }
-  };
+  }, [fetchUserRole]);
 
   useEffect(() => {
     supabase.auth.getUser().then(({ data: { user } }) => {
@@ -134,7 +134,7 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       subscription.unsubscribe();
       userSubscription.unsubscribe();
     };
-  }, [user?.id]);
+  }, [user?.id, handleUser, supabase]);
 
   const signInWithGoogle = async (next?: string) => {
     const redirectUrl = new URL(`${window.location.origin}/auth/callback`);

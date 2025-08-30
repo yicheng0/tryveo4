@@ -94,6 +94,7 @@ export function DataTable<TData, TValue>({
     pagination.pageIndex,
     pagination.pageSize,
     initialData,
+    data,
   ]);
 
   const table = useReactTable({

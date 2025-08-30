@@ -52,7 +52,7 @@ import {
   Zap,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useFieldArray, useForm, useWatch } from "react-hook-form";
 import { toast } from "sonner";
 import * as z from "zod";
@@ -243,9 +243,9 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
     };
 
     calculateDisplayPrice();
-  }, [watchStripeCouponId, coupons]);
+  }, [watchStripeCouponId, coupons, form]);
 
-  const handleFetchCoupons = async () => {
+  const handleFetchCoupons = useCallback(async () => {
     setIsFetchingCoupons(true);
     try {
       const response = await fetch(`/api/admin/stripe/coupons`);
@@ -264,7 +264,7 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
     } finally {
       setIsFetchingCoupons(false);
     }
-  };
+  }, []);
 
   const handleStripeVerify = async () => {
     const priceId = form.getValues("stripe_price_id");
