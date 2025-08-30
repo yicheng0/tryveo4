@@ -229,20 +229,7 @@ export async function syncSubscriptionData(
       user_id: userId,
       plan_id: planId,
       stripe_subscription_id: subscription.id,
-      stripe_customer_id: typeof subscription.customer === 'string' ? subscription.customer : subscription.customer.id,
-      price_id: priceId,
       status: subscription.status,
-      current_period_start: subscription.items.data[0].current_period_start ? new Date(subscription.items.data[0].current_period_start * 1000).toISOString() : null,
-      current_period_end: subscription.items.data[0].current_period_end ? new Date(subscription.items.data[0].current_period_end * 1000).toISOString() : null,
-      cancel_at_period_end: subscription.cancel_at_period_end,
-      canceled_at: subscription.canceled_at ? new Date(subscription.canceled_at * 1000).toISOString() : null,
-      ended_at: subscription.ended_at ? new Date(subscription.ended_at * 1000).toISOString() : null,
-      trial_start: subscription.trial_start ? new Date(subscription.trial_start * 1000).toISOString() : null,
-      trial_end: subscription.trial_end ? new Date(subscription.trial_end * 1000).toISOString() : null,
-      metadata: {
-        ...subscription.metadata,
-        ...(initialMetadata && { checkoutSessionMetadata: initialMetadata })
-      },
     };
 
     const { error: upsertError } = await supabaseAdmin

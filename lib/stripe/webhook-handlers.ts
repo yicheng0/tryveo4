@@ -56,7 +56,7 @@ export async function handleCheckoutSessionCompleted(session: Stripe.Checkout.Se
       return;
     }
 
-    const orderData: Database['public']['Tables']['orders']['Insert'] = {
+    const orderData: any = {
       user_id: userId,
       provider: 'stripe',
       provider_order_id: paymentIntentId,
@@ -564,7 +564,7 @@ export async function handleRefund(charge: Stripe.Charge) {
   }
 
   const refundAmount = charge.amount_refunded / 100;
-  const refundData: Database['public']['Tables']['orders']['Insert'] = {
+  const refundData: any = {
     user_id: originalOrder?.user_id ?? userId,
     provider: 'stripe',
     provider_order_id: refundId,
@@ -607,7 +607,7 @@ export async function handleRefund(charge: Stripe.Charge) {
   // --- End: [custom] Revoke the user's benefits ---
 }
 
-export async function revokeOneTimeCredits(charge: Stripe.Charge, originalOrder: Database['public']['Tables']['orders']['Row'], refundOrderId: string) {
+export async function revokeOneTimeCredits(charge: Stripe.Charge, originalOrder: any, refundOrderId: string) {
   // --- TODO: [custom] Revoke the user's one time purchase benefits ---
   /**
    * Complete the user's benefit revoke based on your business logic.
