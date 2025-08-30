@@ -92,6 +92,8 @@ export function BlogList({
     initialTotal,
     posts.length,
     selectedTagId,
+    pageSize,
+    t,
   ]);
 
   useEffect(() => {
