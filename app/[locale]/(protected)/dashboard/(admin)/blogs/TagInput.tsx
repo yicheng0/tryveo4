@@ -49,7 +49,7 @@ export function TagInput({ value, onChange, disabled }: TagInputProps) {
       }
     };
     loadTags();
-  }, [locale]);
+  }, [locale, t]);
 
   const handleDeselectTag = (tagId: string) => {
     onChange(value.filter((t) => t.id !== tagId));

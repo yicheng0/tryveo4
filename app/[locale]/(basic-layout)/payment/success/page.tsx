@@ -92,7 +92,7 @@ function SuccessContent() {
     };
 
     verifySession();
-  }, [sessionId]);
+  }, [sessionId, locale, revalidateBenefits]);
 
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },

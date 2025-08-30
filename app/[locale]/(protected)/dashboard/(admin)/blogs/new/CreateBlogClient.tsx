@@ -65,7 +65,7 @@ export default function CreateBlogClient() {
       };
       fetchPostToDuplicate();
     }
-  }, [searchParams]);
+  }, [searchParams, t]);
 
   async function handleCreatePost(data: PostFormValues): Promise<void> {
     const result = await createPostAction({

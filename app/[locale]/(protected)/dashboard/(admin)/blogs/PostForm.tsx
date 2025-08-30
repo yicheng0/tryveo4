@@ -74,7 +74,7 @@ import {
 import "@mdxeditor/editor/style.css";
 import { Info, LanguagesIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useMemo, useRef } from "react";
+import { useCallback, useEffect, useMemo, useRef } from "react";
 import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
@@ -263,7 +263,7 @@ export function PostForm({
     form.setValue("slug", slug, { shouldValidate: true });
   };
 
-  const handleTranslate = async (targetLang: Locale) => {
+  const handleTranslate = useCallback(async (targetLang: Locale) => {
     const currentContent = form.getValues("content");
 
     if (!currentContent || currentContent.trim() === "") {
@@ -277,7 +277,7 @@ export function PostForm({
     const prompt = `Translate the following blog post content to ${targetLangName}. Ensure the translation is natural, maintains the original meaning and tone, SEO friendly, and is suitable for a blog post. Only return the translated text itself, without any additional commentary or explanations before or after the translated content. Preserve markdown formatting if present.\n\nOriginal content:\n${currentContent}`;
 
     await complete(prompt);
-  };
+  }, [form, t, complete]);
 
   const handleImageUpload = async (imageFile: File): Promise<string> => {
     if (!imageFile.type.startsWith("image/")) {
@@ -352,7 +352,7 @@ export function PostForm({
       });
       mdxEditorRef.current?.setMarkdown(completion);
     }
-  }, [completion]);
+  }, [completion, form]);
 
   const customToolbarInstance = useMemo(
     () => (

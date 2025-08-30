@@ -108,6 +108,7 @@ export function PostsDataTable<TData, TValue>({
     initialData,
     locale, // ✅ 补充依赖
     t,      // ✅ 补充依赖
+    data,   // ✅ 补充依赖
   ]);
 
   const table = useReactTable({

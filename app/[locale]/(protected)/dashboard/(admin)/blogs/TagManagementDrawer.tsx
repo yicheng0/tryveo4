@@ -30,7 +30,7 @@ import {
   X,
 } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
-import { useEffect, useState, useTransition } from "react";
+import { useCallback, useEffect, useState, useTransition } from "react";
 import { toast } from "sonner";
 
 export function TagManagementDrawer() {
@@ -46,7 +46,7 @@ export function TagManagementDrawer() {
   const [editingTag, setEditingTag] = useState<DbTag | null>(null);
   const [editingTagName, setEditingTagName] = useState("");
 
-  const fetchTags = async () => {
+  const fetchTags = useCallback(async () => {
     setIsLoading(true);
     try {
       const result = await listTagsAction({ locale });
@@ -63,11 +63,11 @@ export function TagManagementDrawer() {
     } finally {
       setIsLoading(false);
     }
-  };
+  }, [locale, t]);
 
   useEffect(() => {
     fetchTags();
-  }, []);
+  }, [fetchTags]);
 
   const handleCreateTag = async () => {
     if (!newTagName.trim()) {
