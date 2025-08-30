@@ -106,6 +106,8 @@ export function PostsDataTable<TData, TValue>({
     pagination.pageIndex,
     pagination.pageSize,
     initialData,
+    locale, // ✅ 补充依赖
+    t,      // ✅ 补充依赖
   ]);
 
   const table = useReactTable({
