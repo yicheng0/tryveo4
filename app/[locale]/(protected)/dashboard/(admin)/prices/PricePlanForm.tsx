@@ -189,6 +189,27 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
     }
   }, [watchStripePriceId, initialData?.stripe_price_id, form]);
 
+  const handleFetchCoupons = useCallback(async () => {
+    setIsFetchingCoupons(true);
+    try {
+      const response = await fetch(`/api/admin/stripe/coupons`);
+      const result = await response.json();
+      if (!response.ok) {
+        throw new Error(result.error || "Failed to fetch coupons.");
+      }
+      const fetchedCoupons = result.data.coupons || [];
+      setCoupons(fetchedCoupons);
+    } catch (error: any) {
+      console.error("Failed to fetch Stripe coupons:", error);
+      toast.error("Failed to fetch Stripe coupons", {
+        description: error.message,
+      });
+      setCoupons([]);
+    } finally {
+      setIsFetchingCoupons(false);
+    }
+  }, []);
+
   useEffect(() => {
     handleFetchCoupons();
   }, [watchEnvironment, handleFetchCoupons]);
@@ -244,27 +265,6 @@ export function PricePlanForm({ initialData, planId }: PricePlanFormProps) {
 
     calculateDisplayPrice();
   }, [watchStripeCouponId, coupons, form]);
-
-  const handleFetchCoupons = useCallback(async () => {
-    setIsFetchingCoupons(true);
-    try {
-      const response = await fetch(`/api/admin/stripe/coupons`);
-      const result = await response.json();
-      if (!response.ok) {
-        throw new Error(result.error || "Failed to fetch coupons.");
-      }
-      const fetchedCoupons = result.data.coupons || [];
-      setCoupons(fetchedCoupons);
-    } catch (error: any) {
-      console.error("Failed to fetch Stripe coupons:", error);
-      toast.error("Failed to fetch Stripe coupons", {
-        description: error.message,
-      });
-      setCoupons([]);
-    } finally {
-      setIsFetchingCoupons(false);
-    }
-  }, []);
 
   const handleStripeVerify = async () => {
     const priceId = form.getValues("stripe_price_id");
