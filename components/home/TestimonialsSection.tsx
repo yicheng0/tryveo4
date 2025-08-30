@@ -19,7 +19,7 @@ const testimonialsData: TestimonialData[] = [
     company: "TechCorp Studios",
     avatar: "/avatars/sarah-chen.jpg",
     rating: 5,
-    testimonial: 'Veo 4 has completely revolutionized our video production pipeline. The quality is indistinguishable from traditional filming, but we can create content in minutes instead of days.'
+    testimonial: "Veo 4 has completely revolutionized our video production pipeline. The quality is indistinguishable from traditional filming, but we can create content in minutes instead of days."
   },
   {
     id: "2",
@@ -28,7 +28,7 @@ const testimonialsData: TestimonialData[] = [
     company: "Digital Dreams Media",
     avatar: "/avatars/marcus-rodriguez.jpg",
     rating: 5,
-    testimonial: 'As a solo creator, Veo 4 gives me the power of an entire production team. The AI understands context and emotion better than I ever imagined possible.'
+    testimonial: "As a solo creator, Veo 4 gives me the power of an entire production team. The AI understands context and emotion better than I ever imagined possible."
   },
   {
     id: "3",
@@ -37,7 +37,7 @@ const testimonialsData: TestimonialData[] = [
     company: "InnovateCorp",
     avatar: "/avatars/elena-vasquez.jpg",
     rating: 4,
-    testimonial: 'We\'ve increased our video output by 500% while maintaining premium quality. Veo 4 isn\'t just a tool – it\'s a creative partner that understands our brand vision.'
+    testimonial: "We've increased our video output by 500% while maintaining premium quality. Veo 4 isn't just a tool – it's a creative partner that understands our brand vision."
   }
 ];
 
@@ -71,10 +71,10 @@ const TestimonialCard = ({ testimonial }: { testimonial: TestimonialData }) => {
           {/* Avatar with initials */}
           <div className="w-12 h-12 rounded-full bg-primaryBlue flex items-center justify-center">
             <span className="text-textMain font-bold text-lg">
-              {testimonial.name.split(' ').map(n => n[0]).join('')}
+              {testimonial.name.split(" ").map((n) => n[0]).join("")}
             </span>
           </div>
-          
+
           {/* User details */}
           <div className="flex-1">
             <h4 className="text-textMain font-semibold text-base">
@@ -93,7 +93,7 @@ const TestimonialCard = ({ testimonial }: { testimonial: TestimonialData }) => {
 
         {/* Testimonial text */}
         <blockquote className="text-textMain text-base leading-relaxed">
-          '{testimonial.testimonial}'
+          &ldquo;{testimonial.testimonial}&rdquo;
         </blockquote>
       </div>
     </div>
@@ -117,10 +117,7 @@ function TestimonialsSection() {
         {/* Testimonials grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {testimonialsData.map((testimonial) => (
-            <TestimonialCard
-              key={testimonial.id}
-              testimonial={testimonial}
-            />
+            <TestimonialCard key={testimonial.id} testimonial={testimonial} />
           ))}
         </div>
 
